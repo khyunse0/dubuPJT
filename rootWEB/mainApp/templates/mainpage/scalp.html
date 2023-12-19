@@ -1,0 +1,99 @@
+{% include 'header.html' %}
+
+
+<body>
+    <!-- Page content-->
+    <br><br><br><br><br><br><br><br>
+    <div class="container">
+        <div class="text-center mt-5">
+            <h1>두피 타입 진단하기</h1>
+            <p class="lead">당신의 두피 유형은 무엇입니까?</p>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+    <h5>두피 사진을 업로드해주세요</h5>
+    <form method="post"
+          class="post-form my-3"
+          enctype="multipart/form-data"
+          action = '../upload/'>
+        {% csrf_token %}
+    	<div>
+            <label for="imgfile">이미지 : </label>
+            <input type="file" class="form-control" name="image" id="imgfile"><br>
+        </div>
+        <div class="d-grid gap-2">
+            <input type="submit" class="btn btn-lg btn-primary" value="진단 시작하기" />
+        </div>
+
+    </form>
+
+
+
+<!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+            <div class="content">
+              <h3><strong>두피 진단 결과 당신의 두피 유형은 "{{predicted_label}}"입니다</strong></h3>
+              <p>
+                탈모는 정상적으로 모발이 존재해야 할 부위에 모발이 없거나 빈약한 상태를 말하며, 일반적으로 두피의 성모(굵고 검은 머리털)가 빠지는 것을 의미합니다. 모발 생성에 필요한 영양공급과 신진대사가 원활하게 이루어 지지 않아 생기는 진행성 질환입니다. 흔히 하루 약 50-70개 정도의 머리카락이 빠지고 새로 자라나는과정은 극히 정상적입니다. 그러나 하루 100개 넘는 머리카락이 빠지면 탈모를 의심할 수 있습니다.
+              </p>
+            </div>
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">생활습관 팁</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" role="tab" tabindex="-1">샴푸 방법</a>
+                </li>
+
+            </ul>
+
+            <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade active show" id="home" role="tabpanel">
+                <p>1. 저녁 11시 이전에 취침해주세요. 머리카락은 모낭의 세포가 분열하면서 만들어지는데 이러한 세포는 오후 11시부터 새벽 2시사이에 가장 왕성하게 활동한다고 합니다. 이때 숙면하지 않으면 세포가 충분히 분열하기 어려워 탈모가 심해질 수 있습니다.<br><br>
+                2. 기름진 음식은 조금만 섭취해주세요. 튀김이나 빵, 과자 등 기름진 음식이나 탄수화물이 많은 음식을 먹으면 혈액 속 중성지방과 콜레스테롤이 증가합니다. 이렇게 되면 혈액 순환이 잘 안되어 모발의 영양분이 제대로 공급이 되지 않게 됩니다.<br><br>
+                3. 단백질 섭취에 신경써주세요. 모발의 구성성분인 단백질을 충분히 섭취해줘야 탈모를 예방할 수 있습니다. 검은콩, 달걀, 아몬드, 땅콩, 연어,두부, 콩나물 등이 있습니다.</p>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel">
+                <p>1. 머리는 반드시 저녁에 감아주세요. 자외선은 피지와 각질을 늘어나게 해 탈모에 악영향을 주는데, 아침에 머리를 감으면 머리를 보호하는 유분이 씻겨나간 채로 자외선을 받게 돼 두피가 더 손상됩니다. <br><br>
+                2. 머리카락은 차가운 바람으로 말려주세요. 뜨거운 바람으로 말리게 되면 두피의 온도를 높이고 모낭에 자극을 줄 수 있습니다. 또한 두피를 지나치게 건조하게 만들면 유수분 밸런스를 무너뜨려 탈모를 유발할 수 있습니다. </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("/media/{{fileName}}");' data-aos="fade-left" data-aos-delay="100">&nbsp;</div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us S ection -->
+
+    <div class="d-grid gap-2">
+      <button class="btn-5" type="button" onclick="window.location.href='{{links_label}}'">추천 샴푸 보러가기</button>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,581 @@
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+    <section>
+        <div id="container"></div>
+    </section>
+    <!-- Page content-->
+    <div class="container">
+        <div class="text-center mt-5">
+
+    <link href="{% static '/product/css/product.css' %}" rel="stylesheet" />
+    <script src="{% static '/product/js/product.js' %}"></script>
+
+    <!-- Portfolio Section-->
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">product</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center" id="imgShow">
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5" id="shampoo1">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/product/20200529/1590713643234.jpg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo_name" class="portfolio-caption-heading">3D 케어시스템 클렌저 샴푸 NO.2</div>
+                        <div id="shampoo_brand" class="portfolio-caption-subheading text-muted">니옥신</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5" id="shampoo2">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo_img2" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/5bf/5bfb66d0-ea4c-11ed-aa5d-3bc7cc24eed0.png?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo_name2" class="portfolio-caption-heading">가려운 두피 케어 샴푸</div>
+                        <div id="shampoo_brand2" class="portfolio-caption-subheading text-muted">헤드앤숄더</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/b7c/b7c00e80-308a-11ec-aa4a-0d6bb813ddfe.jpeg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">나이트 콜라겐 샴푸 [미드나잇 포레스트]</div>
+                        <div class="portfolio-caption-subheading text-muted">트리셀</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/c85/c8574310-65da-11eb-ae5f-0bebc48cabed.jpeg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">대디오</div>
+                        <div class="portfolio-caption-subheading text-muted">러쉬</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 5-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20141106/1415243926345.jpg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">내추럴 발효초 샴푸</div>
+                        <div class="portfolio-caption-subheading text-muted">오가니스트</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 6-->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20191202/1575246676785.jpg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">녹차실감 샴푸 [중건성]</div>
+                        <div class="portfolio-caption-subheading text-muted">아모스프로페셔널</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 7-->
+                <div class="col-md-6 col-lg-4 mb-5" id="shampoo1">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/411/411785e0-da8c-11ec-a150-3fa55b723fed.png?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo_name" class="portfolio-caption-heading">녹차실감 샴푸 [지성 두피용]</div>
+                        <div id="shampoo_brand" class="portfolio-caption-subheading text-muted">아모스프로페셔널</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 8-->
+                <div class="col-md-6 col-lg-4 mb-5" id="shampoo1">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20170705/1499238267874.png?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo_name" class="portfolio-caption-heading">뉴</div>
+                        <div id="shampoo_brand" class="portfolio-caption-subheading text-muted">러쉬</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 9-->
+                <div class="col-md-6 col-lg-4 mb-5" id="shampoo1">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/e21/e216aa30-785a-11ee-98b5-3d1fae1037a0.jpeg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo_name" class="portfolio-caption-heading">단백질 크림 샴푸</div>
+                        <div id="shampoo_brand" class="portfolio-caption-subheading text-muted">아미노비오틴</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 1-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">3D 케어시스템 클렌저 샴푸 NO.2</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/product/20200529/1590713643234.jpg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 니옥신<br><br><br>가격 : 22,000원<br><br><br>제품 설명 : 이미 손상된 일반모의 두피 강화 케어- 투명하고 가벼운 제형의 풍성한 거품으로 두피 잔여물을 말끔하게 씻어 내 청결한 두피 환경 조성<br><br><br></h5>
+                                    </div>
+                                </div>
+
+
+<div class="chart">
+
+    <section>
+        <div id="containers"></div>
+    </section>
+                                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                    <link href="{% static '/chart/css/chart.css' %}" rel="stylesheet" />
+                                    <script src="{% static '/chart/js/chart.js' %}"></script>
+
+    <section>
+        <div id="containers2"></div>
+    </section>
+
+                                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                    <link href="{% static '/chart/css/chart2.css' %}" rel="stylesheet" />
+                                    <script src="{% static '/chart/js/chart2.js' %}"></script>
+
+</div>
+
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 2-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">가려운 두피 케어 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/5bf/5bfb66d0-ea4c-11ed-aa5d-3bc7cc24eed0.png?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 헤드앤숄더<br><br><br>가격 : 16,900원<br><br><br>제품 설명 : * 본 제품은 리뉴얼된 제품입니다.더욱 확실하게 두피 가려움 완화에 도움을 주는 헤드앤숄더 가려운 두피 케어- 유칼립투스 성분이 가려움 완화- 최대 72시간 비듬 걱정없는 두피 토탈 솔루션<br><br><br></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">나이트 콜라겐 샴푸 [미드나잇 포레스트]</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/b7c/b7c00e80-308a-11ec-aa4a-0d6bb813ddfe.jpeg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 트리셀<br><br><br>가격 : 25,000원<br><br><br>제품 설명 : 나이트 루틴에 맞게 두피를 깔끔히 세정해주는 나이트 샴푸- 탈모증상완화에 도움을 주는 기능성 샴푸- 두피에 쌓인 노폐물을 깨끗하게 씻어내는 헤비한 폼- 새벽 숲속을 거닐며 느끼는 힐링 향<br><br><br></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">대디오</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/c85/c8574310-65da-11eb-ae5f-0bebc48cabed.jpeg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 러쉬<br><br><br>가격 : 19,000원<br><br><br>제품 설명 : 제비꽃의 관능적인 향기에 미역 추출물과 코코넛 오일을 더해 모발 가득 촉촉함을 선사하는 샴푸<br><br><br></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 5-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">내추럴 발효초 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20141106/1415243926345.jpg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 오가니스트<br><br><br>가격 : 15,800원<br><br><br>제품 설명 : 놀라운 자연 한방울의 힘, 두피ㆍ모발 케어 1. 자연에 보다 가까운 처방 - 타임, 세이지, 라벤더, 로즈마리, 로즈힙을 정성스레 발효한 내추럴 허브 발효초 함유 - 실리콘/석유계 계면활성제/파라벤 무첨가 2. 두피는 산뜻, 모발은 부드럽게. 두피ㆍ모발 케어 - 두피 정화 효과로 두피를 더욱 청결하고 상쾌하게 - 모발 영양 공급으로 부드럽고 탄력있게 3. 약산성 처방으로 건강한 모발 - pH5.2~5.7 의 범위로 관리되는 포뮬러 4. 오렌지 블라썸과 시트러스가 조화를 이룬 산뜻하고 내추럴한 향기<br><br><br></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 6-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">녹차실감 샴푸 [중건성]</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20191202/1575246676785.jpg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 아모스프로페셔널<br><br><br>가격 : 28,000원<br><br><br>제품 설명 : 깨끗한 두피 환경을 만들어주는 탈모 증상 완화 기능성 샴푸- 실리콘 오일 무첨가로 가벼운 사용감 부여- 중건성 두피 타입을 위한 수분 보습력 강화 샴푸<br><br><br></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 7-->
+    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" aria-labelledby="portfolioModal7" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">녹차실감 샴푸 [지성 두피용]</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/411/411785e0-da8c-11ec-a150-3fa55b723fed.png?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 아모스프로페셔널<br><br><br>가격 : 28,000원<br><br><br>제품 설명 : 스트레스로 약해진 두피와 모발을 위한 탈모 증상 완화 샴푸 - 탈모 증상 완화 기능성 및 꺠끗한 두피 환경 개선 - 실리콘 오일 무첨가로 가벼운 사용감 부여 - 과다 분비되는 피지 및 노폐물 세정 케어<br><br><br></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 8-->
+    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" aria-labelledby="portfolioModal8" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">스칼프 퓨리파잉 마이크로바이옴 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 원오세븐<br><br><br>가격 : 34,000원<br><br><br>제품 설명 : 7년산 천연발효식초가 두피와 모발을 촉촉하게 도와주고, 프리&프로바이오틱스 콤플렉스가 함유되어 건강한 두피 마이크로바이옴에 도움을 주는 약산성 두피 탈모 샴푸<br><br><br></h5>
+                                    </div>
+                                </div>
+
+
+<div class="chart">
+
+    <section>
+        <div id="containers"></div>
+    </section>
+                                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                    <link href="{% static '/chart/css/chart.css' %}" rel="stylesheet" />
+                                    <script src="{% static '/chart/js/chart.js' %}"></script>
+
+    <section>
+        <div id="containers2"></div>
+    </section>
+
+                                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                    <link href="{% static '/chart/css/chart2.css' %}" rel="stylesheet" />
+                                    <script src="{% static '/chart/js/chart2.js' %}"></script>
+
+</div>
+
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 9-->
+    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" aria-labelledby="portfolioModal9" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">스칼프 퓨리파잉 마이크로바이옴 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-5">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 원오세븐<br><br><br>가격 : 34,000원<br><br><br>제품 설명 : 7년산 천연발효식초가 두피와 모발을 촉촉하게 도와주고, 프리&프로바이오틱스 콤플렉스가 함유되어 건강한 두피 마이크로바이옴에 도움을 주는 약산성 두피 탈모 샴푸<br><br><br></h5>
+                                    </div>
+                                </div>
+
+
+<div class="chart">
+
+    <section>
+        <div id="containers"></div>
+    </section>
+                                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                    <link href="{% static '/chart/css/chart.css' %}" rel="stylesheet" />
+                                    <script src="{% static '/chart/js/chart.js' %}"></script>
+
+    <section>
+        <div id="containers2"></div>
+    </section>
+
+                                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                    <link href="{% static '/chart/css/chart2.css' %}" rel="stylesheet" />
+                                    <script src="{% static '/chart/js/chart2.js' %}"></script>
+
+</div>
+
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+<div class="text-center">
+    <button class="btn btn-primary">처음</button>
+    <button class="btn btn-primary">1</button>
+    <button class="btn btn-primary">2</button>
+    <button class="btn btn-primary">3</button>
+    <button class="btn btn-primary">4</button>
+    <button class="btn btn-primary">5</button>
+    <button class="btn btn-primary">끝</button>
+</div>
+
+</body>
+
+{% include 'footer.html' %}

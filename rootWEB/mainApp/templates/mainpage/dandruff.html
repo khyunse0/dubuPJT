@@ -1,0 +1,622 @@
+<!-- 탈모 -->
+
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
+    <link href="{% static '/product/css/product.css' %}" rel="stylesheet" />
+    <script src="{% static '/product/js/product.js' %}"></script>
+
+    <section>
+        <div id="container"></div>
+    </section>
+    <!-- Page content-->
+    <div class="container">
+        <div class="text-center mt-5">
+            <h1>당신은 "비듬" 유형으로 판단됩니다.</h1>
+            <section class="py-5 mt-1">
+                <div class="container">
+                    <div class="col-4 mx-auto mt-1">
+                        <button id="incenseBtn" type="button" class="btn btn-primary btn-lg round"><i class="bi bi-flower3"></i>&nbsp 향</button>
+                        <button id="bubbleBtn" type="button" class="btn btn-warning btn-lg btn-block"><i class="bi bi-droplet"></i>&nbsp 거품</button>
+                        <button id="troubleBtn" type="button" class="btn btn-success btn-lg btn-block"><i class="bi bi-emoji-dizzy"></i>&nbsp 트러블</button>
+                        <button id="cleanBtn" type="button" class="btn btn-info btn-lg btn-block"><i class="bi bi-stars"></i>&nbsp 세정력</button>
+                    </div>
+                </div>
+            </section>
+    <!-- Portfolio Section-->
+    <section class="page-section portfolio pt-5" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">product</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center" id="imgShow">
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5" id="shampoo1">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo1_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/64f/64fc4e70-7c87-11ee-b66e-1d63f0e1913d.png?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo1_name" class="portfolio-caption-heading">쿨 멘솔 샴푸</div>
+                        <div id="shampoo1_brand" class="portfolio-caption-subheading text-muted">헤드앤숄더</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5" id="shampoo2">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo2_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo2_name" class="portfolio-caption-heading">피오니 샴푸</div>
+                        <div id="shampoo2_brand" class="portfolio-caption-subheading text-muted">클로란</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo3_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/f8a/f8a69270-48d6-11ec-be2a-cd9c9ec8968a.jpeg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo3_name" class="portfolio-caption-heading">미셀라 모히또 샴푸</div>
+                        <div id="shampoo3_brand" class="portfolio-caption-subheading text-muted">프레시팝</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4-->
+                <div id="shampoo4" class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo4_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/6d7/6d760cd0-0484-11ec-a66c-a56af837e33e.jpeg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo4_name" class="portfolio-caption-heading">아로마티카 로즈마리 스칼프 스케일링 샴푸</div>
+                        <div id="shampoo4_brand" class="portfolio-caption-subheading text-muted">아로마티카</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 5-->
+                <div id="shampoo5" class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo_img5" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo_name5" class="portfolio-caption-heading">스칼프 퓨리파잉 마이크로바이옴 샴푸</div>
+                        <div id="shampoo_brand5" class="portfolio-caption-subheading text-muted">원오세븐</div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 6-->
+                <div id="shampoo6" class="col-md-6 col-lg-4">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img id="shampoo_img6" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/21a/21a50a10-fb6b-11ed-a11e-4d7d498093e8.jpeg?w=456" alt="..." />
+                    </div>
+                    <div class="portfolio-caption">
+                        <div id="shampoo_name6" class="portfolio-caption-heading">랩 탈모완화 샴푸</div>
+                        <div id="shampoo_brand6" class="portfolio-caption-subheading text-muted">닥터방기원</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 1-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 id="modal1_name" class="portfolio-modal-title text-secondary text-uppercase mb-0">쿨 멘솔 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img id="modal1_img" class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/64f/64fc4e70-7c87-11ee-b66e-1d63f0e1913d.png?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-5 m-auto">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 id="modal1_text" class="mb-4">브랜드 : 헤드앤숄더<br><br><br>가격 : 16,900원<br><br><br>제품 설명 : 건강한 모발을 위한 두피 토탈 솔루션 - 샴푸 후 오래 지속되는 시원한 쿨링감 - 두피 속 비듬 깔끔히 세정 - 과학적으로 입증된 기능성 포뮬러<br><br><br></h5>
+                                    </div>
+                                </div>
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+
+                                <div class="chart">
+                                    <div class="row">
+                                        <div clas="col-lg-6" id="skin_container1"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/skin_chart.js' %}"></script>
+
+                                        <div clas="col-lg-6" id="age_container1"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/age_chart.js' %}"></script>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 2-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 id="modal2_name" class="portfolio-modal-title text-secondary text-uppercase mb-0">피오니 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img id="modal2_img" class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-5 m-auto">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 클로란<br><br><br>가격 : 19,800원<br><br><br>제품 설명 : 가렵고 예민한 두피에 빠른 진정 효과를 선사하고 모발엔 산뜻하게 수분을 충전해주는 샴푸 - 두피 가려움 완화 및 자극받은 두피 진정 - 수분 보습 및 자극 완화 효과 - 무실리콘, 파라벤 6종 프리로 저자극 세정<br><br><br></h5>
+                                    </div>
+                                </div>
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+
+                                <div class="chart">
+                                    <div class="row">
+                                        <div clas="col-lg-6" id="skin_container2"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/skin_chart.js' %}"></script>
+
+                                        <div clas="col-lg-6" id="age_container2"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/age_chart.js' %}"></script>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 id="modal3_name" class="portfolio-modal-title text-secondary text-uppercase mb-0">미셀라 모히또 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img id="modal3_img" class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/f8a/f8a69270-48d6-11ec-be2a-cd9c9ec8968a.jpeg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-5 m-auto">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 프레시팝<br><br><br>가격 : 15,000원<br><br><br>제품 설명 : 미셀라 기술의 흡착거품이 자석처럼 자극없이 모공 속 먼지와 노폐물을 제거하는 지성용 두피 클렌징 샴푸 - 자연유래 계면활성제 함유로 풍성한 거품 - 건강한 두피를 위한 약산성 케어 - 두피 장벽 강화 효과로 촉촉한 두피<br><br><br></h5>
+                                    </div>
+                                </div>
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+
+                                <div class="chart">
+                                    <div class="row">
+                                        <div clas="col-lg-6" id="skin_container3"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/skin_chart.js' %}"></script>
+
+                                        <div clas="col-lg-6" id="age_container3"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/age_chart.js' %}"></script>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 id="modal4_name" class="portfolio-modal-title text-secondary text-uppercase mb-0">아로마티카 로즈마리 스칼프 스케일링 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img id="modal4_img" class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/6d7/6d760cd0-0484-11ec-a66c-a56af837e33e.jpeg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-5 m-auto">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 아로마티카<br><br><br>가격 : 20,000원<br><br><br>제품 설명 : 묵은 각질 케어와 영양 공급으로 깨끗한 두피 환경을 만드는데 도움을 주는 샴푸 - 100% 재활용 플라스틱 용기 사용 - BHA로 두피 모공 속 피지와 각질을 집중 클렌징 - 동물성 원료를 배제한 비건 포뮬러로 매일 안심 세정<br><br><br></h5>
+                                    </div>
+                                </div>
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+
+                                <div class="chart">
+                                    <div class="row">
+                                        <div clas="col-lg-6" id="skin_container4"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/skin_chart.js' %}"></script>
+
+                                        <div clas="col-lg-6" id="age_container4"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/age_chart.js' %}"></script>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 5-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 id="modal5_name" class="portfolio-modal-title text-secondary text-uppercase mb-0">스칼프 퓨리파잉 마이크로바이옴 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img id="modal5_img" class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-5 m-auto">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 원오세븐<br><br><br>가격 : 34,000원<br><br><br>제품 설명 : 7년산 천연발효식초가 두피와 모발을 촉촉하게 도와주고, 프리&프로바이오틱스 콤플렉스가 함유되어 건강한 두피 마이크로바이옴에 도움을 주는 약산성 두피 탈모 샴푸<br><br><br></h5>
+                                    </div>
+                                </div>
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+
+                                <div class="chart">
+                                    <div class="row">
+                                        <div clas="col-lg-6" id="skin_container5"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/skin_chart.js' %}"></script>
+
+                                        <div clas="col-lg-6" id="age_container5"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/age_chart.js' %}"></script>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 6-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 id="modal6_name" class="portfolio-modal-title text-secondary text-uppercase mb-0">랩 탈모완화 샴푸</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <!-- Portfolio Modal - Image-->
+                                        <img id="modal6_img" class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/21a/21a50a10-fb6b-11ed-a11e-4d7d498093e8.jpeg?w=456" alt="..." />
+                                    </div>
+                                    <div class="col-lg-5 m-auto">
+                                        <!-- Portfolio Modal - Text-->
+                                        <h5 class="mb-4">브랜드 : 닥터방기원<br><br><br>가격 : 20,000원<br><br><br>제품 설명 : 22가지 천연원료 추출물로 건강한 두피와 부드러운 모발을 만들어주는 탈모 완화 샴푸<br><br><br></h5>
+                                    </div>
+                                </div>
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
+                                    장바구니
+                                </button></p>
+
+                                <div class="chart">
+                                    <div class="row">
+                                        <div clas="col-lg-6" id="skin_container6"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/skin_chart.js' %}"></script>
+
+                                        <div clas="col-lg-6" id="age_container6"></div>
+                                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                                            <link href="{% static '/dan_chart/css/chart.css' %}" rel="stylesheet" />
+                                            <script src="{% static '/dan_chart/js/age_chart.js' %}"></script>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#incenseBtn').click(function() {
+                //alert('click') ;
+                $('#shampoo1_name').text('샴푸 [시그니처 향]')
+                $('#shampoo1_brand').text('나드')
+                $('#shampoo1_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/917/91796eb0-f875-11ed-a1fc-4dbcf7848442.jpeg?w=456");
+                $('#modal1_name').text('샴푸 [시그니처 향]')
+                $('#modal1_brand').text('원오세븐')
+                $('#modal1_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/917/91796eb0-f875-11ed-a1fc-4dbcf7848442.jpeg?w=456");
+
+                $('#shampoo2_name').text('스칼프 퓨리파잉 마이크로바이옴 샴푸')
+                $('#shampoo2_brand').text('원오세븐')
+                $('#shampoo2_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456");
+                $('#modal2_name').text('스칼프 퓨리파잉 마이크로바이옴 샴푸')
+                $('#modal2_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456");
+
+                $('#shampoo3_name').text('피오니 샴푸')
+                $('#shampoo3_brand').text('클로란')
+                $('#shampoo3_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456");
+                $('#modal3_name').text('피오니 샴푸')
+                $('#modal3_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456");
+
+                $('#shampoo4').empty()
+                $('#shampoo5').empty()
+                $('#shampoo6').empty()
+            })
+            $('#bubbleBtn').click(function() {
+                //alert('click') ;
+                $('#shampoo1_name').text('스칼프 퓨리파잉 마이크로바이옴 샴푸')
+                $('#shampoo1_brand').text('원오세븐')
+                $('#shampoo1_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456");
+                $('#modal1_name').text('스칼프 퓨리파잉 마이크로바이옴 샴푸')
+                $('#modal1_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456");
+
+                $('#shampoo2_name').text('피오니 샴푸')
+                $('#shampoo2_brand').text('클로란')
+                $('#shampoo2_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456");
+                $('#modal2_name').text('피오니 샴푸')
+                $('#smodal2_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456");
+
+                $('#shampoo3_name').text('아로마티카 로즈마리 스칼프 스케일링 샴푸')
+                $('#shampoo3_brand').text('아로마티카')
+                $('#shampoo3_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/6d7/6d760cd0-0484-11ec-a66c-a56af837e33e.jpeg?w=456");
+                $('#modal3_name').text('아로마티카 로즈마리 스칼프 스케일링 샴푸')
+                $('#modal3_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/6d7/6d760cd0-0484-11ec-a66c-a56af837e33e.jpeg?w=456");
+
+                $('#shampoo4').empty()
+                $('#shampoo5').empty()
+                $('#shampoo6').empty()
+            })
+            $('#troubleBtn').click(function() {
+                //alert('click') ;
+                $('#shampoo1_name').text('로즈메리 민트 퓨리파잉 샴푸')
+                $('#shampoo1_brand').text('아베다')
+                $('#shampoo1_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/product/20201021/1603271486812.PNG?w=456");
+                $('#modal1_name').text('로즈메리 민트 퓨리파잉 샴푸')
+                $('#modal1_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/product/20201021/1603271486812.PNG?w=456");
+
+                $('#shampoo2_name').text('피오니 샴푸')
+                $('#shampoo2_brand').text('클로란')
+                $('#shampoo2_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456");
+                $('#modal2_name').text('피오니 샴푸')
+                $('#modal2_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456");
+
+                $('#shampoo3_name').text('스칼프 퓨리파잉 마이크로바이옴 샴푸')
+                $('#shampoo3_brand').text('원오세븐')
+                $('#shampoo3_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456");
+                $('#modal3_name').text('스칼프 퓨리파잉 마이크로바이옴 샴푸')
+                $('#modal3_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456");
+
+                $('#shampoo4').empty()
+                $('#shampoo5').empty()
+                $('#shampoo6').empty()
+            })
+            $('#cleanBtn').click(function() {
+                //alert('click') ;
+                $('#shampoo1_name').text('스칼프 퓨리파잉 마이크로바이옴 샴푸')
+                $('#shampoo1_brand').text('원오세븐')
+                $('#shampoo1_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456");
+                $('#modal1_name').text('스칼프 퓨리파잉 마이크로바이옴 샴푸')
+                $('#modal1_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456");
+
+                $('#shampoo2_name').text('피오니 샴푸')
+                $('#shampoo2_brand').text('클로란')
+                $('#shampoo2_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456");
+                $('#modal2_name').text('피오니 샴푸')
+                $('#modal2_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20180502/1525239896489.png?w=456");
+
+                $('#shampoo3_name').text('미셀라 모히또 샴푸')
+                $('#shampoo3_brand').text('프레시팝')
+                $('#shampoo3_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/f8a/f8a69270-48d6-11ec-be2a-cd9c9ec8968a.jpeg?w=456");
+                $('#modal3_name').text('미셀라 모히또 샴푸')
+                $('#modal3_img').attr("src","https://dn5hzapyfrpio.cloudfront.net/product/f8a/f8a69270-48d6-11ec-be2a-cd9c9ec8968a.jpeg?w=456");
+
+                $('#shampoo4').empty()
+                $('#shampoo5').empty()
+                $('#shampoo6').empty()
+            })
+
+        })
+    </script>
+</body>
+
+{% include 'footer.html' %}
