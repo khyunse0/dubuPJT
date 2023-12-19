@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Create an account</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      form {
+        width: 50%;
+      }
+      .container {
+        display: flex;
+        flex-direction: auto;
+        width: 100%;
+      }
+      .h1Tag {
+        margin-top: 150px;
+        margin-bottom: 20px;
+      }
+      label {
+        margin-top: 10px;
+        display: block;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="pwd"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #808080;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #808080;
+      }
+      p {
+        margin-top: 20px;
+      }
+    </style>
+    <script>
+      function check() {
+        const id = document.getElementById("id").value;
+        const pwd = document.getElementById("pwd").value;
+        const email = document.getElementById("email").value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (id.trim().length < 6) {
+          alert("아이디를 다시 확인해주세요");
+          return false;
+        }
+        if (pwd.trim().length < 6) {
+          alert("비밀번호를 다시 확인해주세요");
+          return false;
+        }
+        if (email.trim() === "" || !emailRegex.test(email)) {
+          alert("이메일을 다시 확인해주세요");
+          return false;
+        }
+        alert('회원가입이 완료되었습니다!');
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+  {% include 'header.html' %}
+
+    <h1 class="h1Tag">Create an account</h1>
+    <form action="" method="post" onsubmit="return check();">
+      {% csrf_token %}
+      <div>
+        <label for="id"><strong>아이디:</strong></label>
+        <input type="text" placeholder="아이디를 입력해주세요 (6자 이상)" id="id" name="id">
+      </div>
+      <div>
+        <label for="pwd"><strong>비밀번호:</strong></label>
+        <input type="text" placeholder="비밀번호를 입력해주세요 (6자 이상)" id="pwd" name="pwd">
+      </div>
+      <div>
+        <label for="email"><strong>이메일:</strong></label>
+        <input type="email" placeholder="이메일을 입력해주세요" id="email" name="email">
+      </div>
+      <p>By clicking "Create your account" below, you agree to our terms of service and privacy policy.</p>
+      <div>
+        <input type="submit" value="Create your account" id="submit_registerForm">
+      </div>
+    </form>
+    {% include 'footer.html' %}
+
+  </body>
+  <script>
+  $(document).ready(function() {
+      $('#submit_registerForm').click(function(e) {
+          // 폼 제출을 방지
+          e.preventDefault();
+
+          // 메시지 표시
+          alert('회원가입이 완료되었습니다!');
+
+          // 폼 제출
+          $(this).closest('form').submit();
+      });
+  });
+  </script>
+</html>
