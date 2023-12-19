@@ -31,9 +31,19 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'scalp' %}">Scalp Check</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'shampoo' %}">Product</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'my' %}">Mypage</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'join' %}">Join</a></li>
+                        {% if request.session.user_id %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'join' %}">Join</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
+    </body>
+</html>
