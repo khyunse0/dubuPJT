@@ -27,6 +27,8 @@ from PIL import Image
 
 import os
 from dotenv import load_dotenv
+from google_auth_oauthlib.flow import Flow
+from google.oauth2.credentials import Credentials
 
 # Create your views here.
 
@@ -136,3 +138,12 @@ def register(request):
 def find_my_account(request) :
     print('debug >> mainApp /find_pwd')
     return render(request, 'mainpage/find_my_account.html')
+
+
+def google_auth(request):
+    # Google OAuth 설정
+    flow = Flow.from_client_secrets_file(
+        'client_secrets.json',
+        scopes=['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email'],
+        redirect_uri='http://127.0.0.1:8000/auth/google/callback'
+    )
