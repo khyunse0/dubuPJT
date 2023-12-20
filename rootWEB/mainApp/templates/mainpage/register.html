@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Create an account</title>
+    <title>회원가입</title>
     <style>
       body {
         display: flex;
@@ -96,7 +96,7 @@
   <body>
   {% include 'header.html' %}
 
-    <h1 class="h1Tag">Create an account</h1>
+    <h1 class="h1Tag">회원가입</h1>
     <form action="" method="post" onsubmit="return check();">
       {% csrf_token %}
       <div>
@@ -122,9 +122,8 @@
         <label for="email"><strong>이메일:</strong></label>
         <input type="email" placeholder="이메일을 입력해주세요" id="email" name="email">
       </div>
-      <p>By clicking "Create your account" below, you agree to our terms of service and privacy policy.</p>
       <div>
-        <input type="submit" value="Create your account" id="submit_registerForm">
+        <input type="submit" value="회원가입하기" id="submit_registerForm">
       </div>
     </form>
     {% include 'footer.html' %}
