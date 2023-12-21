@@ -165,12 +165,19 @@
         return false;
       }
 
-      // 모든 검증이 성공했을 때만 실행됩니다.
+      if (isIdDuplicated) {
+        alert("존재하는 계정입니다. 회원정보를 찾아주세요")
+        event.preventDefault(); // 폼 제출 방지
+        return false;
+      }
+
+      // 모든 검증이 성공했을 때만 실행.
       alert('회원가입이 완료되었습니다!');
       return true;
     });
   });
 
+    var isIdDuplicated = false; // 아이디 중복 상태를 추적하는 플래그 변수
     $("#id").blur(function() {
       var userId = $(this).val();
       $.ajax({
@@ -180,11 +187,15 @@
         success: function(data) {
           if (data.is_taken) {
             $("#idExists").text("같은 아이디가 존재합니다").show();
+            isIdDuplicated = true; // 아이디가 중복됨을 표시
           } else {
             $("#idExists").hide();
+            isIdDuplicated = false; // 아이디 중복이 없음을 표시
           }
         }
       });
     });
+
+    is_taken
   </script>
 </html>
