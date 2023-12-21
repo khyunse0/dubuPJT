@@ -69,31 +69,6 @@
         cursor: pointer;
       }
     </style>
-    <script>
-      function check() {
-        const id = document.getElementById("id").value;
-        const pwd = document.getElementById("password").value;
-        const pwdRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-        const email = document.getElementById("email").value;
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (id.trim().length < 8) {
-          alert("아이디를 다시 확인해주세요");
-          return false;
-        }
-        if (!pwdRegex.test(pwd)) {
-          alert("비밀번호는 최소 8자 이상이며, 대소문자, 숫자, 특수문자를 각각 하나 이상 포함해야 합니다.");
-          event.preventDefault();
-          return false;
-        }
-        if (email.trim() === "" || !emailRegex.test(email)) {
-          alert("이메일을 다시 확인해주세요");
-          return false;
-        }
-        alert('회원가입이 완료되었습니다!');
-        return true;
-      }
-    </script>
   </head>
   <body>
   {% include 'header.html' %}
@@ -107,7 +82,7 @@
       </div>
       <div class="password-container">
         <label for="password"><strong>비밀번호:</strong></label>
-        <input type="password" class="password-field" placeholder="비밀번호를 입력해주세요 (숫자, 대소/특수문자 포함 8자 이상)" id="password" name="pwd">
+        <input type="password" class="password-field" placeholder="비밀번호를 입력해주세요 (숫자, 특수/대소문자 포함 8자 이상)" id="password" name="pwd">
         <!-- SVG icon for password visibility toggle (eye-slash) -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="password-icon eye-slash" viewBox="0 0 16 16" id="togglePassword">
           <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486z"/>
@@ -153,6 +128,35 @@
         eyeSlashIcon.show();
         console.log('text -> password');
       }
+    });
+
+    // 폼 제출 이벤트 핸들러
+    $("form").submit(function(event) {
+      const id = $("#id").val().trim();
+      const pwd = $("#password").val().trim();
+      const pwdRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+      const email = $("#email").val().trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (id.length < 8) {
+        alert("아이디를 다시 확인해주세요");
+        event.preventDefault();
+        return false;
+      }
+      if (!pwdRegex.test(pwd)) {
+        alert("비밀번호는 최소 8자 이상이며, 대소문자, 숫자, 특수문자를 각각 하나 이상 포함해야 합니다.");
+        event.preventDefault();
+        return false;
+      }
+      if (email.trim() === "" || !emailRegex.test(email)) {
+        alert("이메일을 다시 확인해주세요");
+        event.preventDefault();
+        return false;
+      }
+
+      // 모든 검증이 성공했을 때만 실행됩니다.
+      alert('회원가입이 완료되었습니다!');
+      return true;
     });
   });
   </script>
