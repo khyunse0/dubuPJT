@@ -143,7 +143,6 @@ def register(request):
         return render(request, 'mainpage/register.html')
 
 
-
 def find_my_account(request) :
     print('debug >> mainApp /find_pwd')
     return render(request, 'mainpage/find_my_account.html')
@@ -156,3 +155,9 @@ def google_auth(request):
         scopes=['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email'],
         redirect_uri='http://127.0.0.1:8000/auth/google/callback'
     )
+
+
+def check_user_id(request):
+    user_id = request.GET.get('id', None)
+    is_taken = User_tbl.objects.filter(user_id=user_id).exists()
+    return JsonResponse({'is_taken': is_taken})

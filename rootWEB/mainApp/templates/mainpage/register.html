@@ -68,6 +68,16 @@
         right: 10px; /* 우측에서 10px */
         cursor: pointer;
       }
+
+      #idExists {
+        display: none;
+        background-color: rgba(255, 0, 0, 0.3); /* 반투명 빨간색 배경 */
+        color: white;
+        padding: 5px;
+        margin-top: 5px;
+        border-radius: 5px;
+        font-size: small;
+      }
     </style>
   </head>
   <body>
@@ -79,6 +89,7 @@
       <div>
         <label for="id"><strong>아이디:</strong></label>
         <input type="text" placeholder="아이디를 입력해주세요 (8자 이상)" id="id" name="id">
+        <span id="idExists" style="display: none;"></span>
       </div>
       <div class="password-container">
         <label for="password"><strong>비밀번호:</strong></label>
@@ -159,5 +170,21 @@
       return true;
     });
   });
+
+    $("#id").blur(function() {
+      var userId = $(this).val();
+      $.ajax({
+        url: '/check-user-id/',
+        data: { 'id': userId },
+        dataType: 'json',
+        success: function(data) {
+          if (data.is_taken) {
+            $("#idExists").text("같은 아이디가 존재합니다").show();
+          } else {
+            $("#idExists").hide();
+          }
+        }
+      });
+    });
   </script>
 </html>
