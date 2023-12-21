@@ -30,6 +30,9 @@ from dotenv import load_dotenv
 from google_auth_oauthlib.flow import Flow
 from google.oauth2.credentials import Credentials
 
+from django.core.cache import cache
+from django.utils import timezone
+
 # Create your views here.
 
 def index(request) :
@@ -60,19 +63,34 @@ def login(request) :
             username = request.POST.get("id")
             password = request.POST.get("pwd")
             print("debug params >>> ", username, password)
+
+            # 로그인 실패 기록 확인
+            fail_count_key = f"login_fail_{username}"
+            fail_count = cache.get(fail_count_key, 0)
+
+            # 임계값 초과 시
+            if fail_count >= 11:
+                last_attempt_time = cache.get(f"{fail_count_key}_time")
+                if last_attempt_time and timezone.now() < last_attempt_time + timezone.timedelta(minutes=5):
+                    return HttpResponse("로그인이 일시적으로 차단되었습니다. 5분 후에 다시 시도해주세요.")
+
             try:
-                # user = authenticate(username=username, password=password)
                 user = User_tbl.objects.get(user_id=username, user_pwd=password)
                 print('debug >>> user ', user)
-                if user is not None:
+                if user is not None: # 로그인 성공
+                    # 실패 카운트 초기화
+                    cache.delete(fail_count_key)
+                    cache.delete(f"{fail_count_key}_time")
+                    # 로그인 처리
                     request.session['user_id'] = user.user_id
                     print('debug >>> 로그인 성공!')
                     return redirect('index')
-                else:
-                    print('debug >>> 로그인 실패 1')
-                    return render(request, 'mainpage/login.html', {'message': '로그인 실패!'})
             except User_tbl.DoesNotExist:
-                print('debug >>> 예외 발생 1: ', request)
+                print('debug >>> 로그인 실패 1: ', request)
+                cache.set(fail_count_key, fail_count + 1, timeout=300)  # 실패 카운트 증가
+                print('fail_count: ', fail_count)
+                if fail_count == 0:
+                    cache.set(f"{fail_count_key}_time", timezone.now(), timeout=300)
                 return render(request, 'mainpage/login.html', {'message': '아이디와 비밀번호를 다시 확인해주세요'})
         else:
             print('debug >>> 로그인 실패 2')
