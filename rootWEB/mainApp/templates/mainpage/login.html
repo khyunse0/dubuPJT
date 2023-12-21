@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{% static 'resources/bootstrap/css/login.css' %}">
     <script defer src="{% static 'resources/bootstrap/js/login.js' %}"></script>
     <script src="{% static 'resources/plugins/jQuery/jQuery-2.1.4.min.js' %}"></script>
-
     <script>
     window.onload = function() {
         // 템플릿 컨텍스트에 메시지가 있는지 확인
@@ -39,7 +38,19 @@
           </div>
           <div class="form-group has-feedback">
             <input type="password" name="pwd" class="login-form-field" placeholder="Password"/>
+            <!-- 이 아래 코드 한 줄은 왜 있는 거지? -->
             <span class="glyphicon glyphicon-lock login-form-field-feedback"></span>
+            <!-- SVG icon for password visibility toggle (eye-slash) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="password-icon eye-slash" viewBox="0 0 16 16" id="togglePassword">
+              <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486z"/>
+              <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+              <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708"/>
+            </svg>
+            <!-- SVG icon for password visibility (eye-fill) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="password-icon eye-fill" viewBox="0 0 16 16" style="display: none;" id="togglePasswordFill">
+              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+            </svg>
           </div>
           <div class="row">
             <div class="col-xs-8">
@@ -51,7 +62,6 @@
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary">로그인</button>
-<!--              <button type="submit" class="btn" id="login-form-submit">로그인</button>-->
             </div><!-- /.col -->
           </div>
           <div class="link-container">
@@ -63,4 +73,25 @@
       </main>
     {% include 'footer.html' %}
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // 비밀번호 가시성 토글
+        $('.password-icon').click(function() {
+          var passwordField = $('input[name="pwd"]'); // 비밀번호 입력 필드 참조
+          var eyeSlashIcon = $('#togglePassword'); // 비밀번호 아이콘 SVG 참조
+          var eyeFillIcon = $('#togglePasswordFill');
+
+          if (passwordField.attr('type') === "password") {
+            passwordField.attr('type', 'text');
+            eyeSlashIcon.hide();
+            eyeFillIcon.show();
+          } else {
+            passwordField.attr('type', 'password');
+            eyeFillIcon.hide();
+            eyeSlashIcon.show();
+          }
+        });
+      });
+    </script>
 </html>
