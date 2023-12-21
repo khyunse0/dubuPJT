@@ -20,19 +20,60 @@
     <!-- Page content-->
     <div class="container">
         <div class="text-center mt-5">
-            <h1>당신은 "탈모" 유형으로 판단됩니다.</h1>
-            <section class="py-5 mt-1">
+            <h1><i class="bi bi-pin-fill"></i>&nbsp; 당신은 "탈모" 유형으로 판단됩니다.</h1>
+            <section class="py-5 mt-2" >
                 <div class="container">
-                    <div class="col-4 mx-auto mt-1">
-                        <button id="incenseBtn" type="button" class="btn btn-primary btn-lg round"><i class="bi bi-flower3"></i>&nbsp 향</button>
-                        <button id="bubbleBtn" type="button" class="btn btn-warning btn-lg btn-block"><i class="bi bi-droplet"></i>&nbsp 거품</button>
-                        <button id="troubleBtn" type="button" class="btn btn-success btn-lg btn-block"><i class="bi bi-emoji-dizzy"></i>&nbsp 트러블</button>
-                        <button id="cleanBtn" type="button" class="btn btn-info btn-lg btn-block"><i class="bi bi-stars"></i>&nbsp 세정력</button>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="button-container">
+                                <button id="incenseBtn" type="button" class="btn btn-primary btn-lg round button-fixed-width "><i class="bi bi-flower3"></i>&nbsp&nbsp&nbsp&nbsp; 향</button>
+                            </div>
                         </div>
+                        <div class="col-3">
+                            <div class="button-container">
+                                <button id="bubbleBtn" type="button" class="btn btn-warning btn-lg round button-fixed-width mr-5"><i class="bi bi-droplet"></i>&nbsp&nbsp&nbsp&nbsp; 거품</button>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="button-container">
+                                <button id="troubleBtn" type="button" class="btn btn-success btn-lg round button-fixed-width mr-5"><i class="bi bi-emoji-dizzy"></i>&nbsp&nbsp&nbsp&nbsp; 트러블</button>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="button-container">
+                                <button id="cleanBtn" type="button" class="btn btn-info btn-lg round button-fixed-width"><i class="bi bi-stars"></i>&nbsp&nbsp&nbsp&nbsp; 세정력</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-    <!-- Portfolio Section-->
-    <section class="page-section portfolio pt-5" id="portfolio">
+
+            <style>
+                .button-fixed-width {
+                    width: 70%;
+                    padding-top: 20px; /* Adjust the top padding to increase button height */
+                    padding-bottom: 20px;
+                    border: none; /* Remove the outer border of the button */
+                }
+                #incenseBtn {
+                    background-color: 	#6495ED; /* Pink color for the first button */
+                    color: white;
+                }
+                #bubbleBtn {
+                    background-color: 	#66CDAA; /* Pink color for the first button */
+                    color: white;
+                }
+                #troubleBtn {
+                    background-color: #F4A460; /* Pink color for the first button */
+                    color: white;
+                }
+                #cleanBtn {
+                    background-color: 	#DB7093; /* Pink color for the first button */
+                    color: white;
+                }
+            </style>
+            <!-- Portfolio Section-->
+    <section class="page-section portfolio pt-5 px-5" id="portfolio" style="background-color: #E6F1F7;">
         <div class="container">
             <!-- Portfolio Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">product</h2>
@@ -53,8 +94,8 @@
                         <img id="shampoo1_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/c99/c99e66f0-7d71-11eb-bcb2-8dd095f00e51.jpeg?w=456" alt="..." />
                     </div>
                     <div class="portfolio-caption">
-                        <div id="shampoo1_name" class="portfolio-caption-heading">블루밍 카밍 샴푸</div>
-                        <div id="shampoo1_brand" class="portfolio-caption-subheading text-muted">베네자임</div>
+                        <div id="shampoo1_name" class="portfolio-caption-heading" style="margin-top: 20px;">블루밍 카밍 샴푸</div>
+                        <div id="shampoo1_brand" class="portfolio-caption-subheading text-muted" style="margin-top: 10px;">베네자임</div>
                     </div>
                 </div>
                 <!-- Portfolio Item 2-->
@@ -66,8 +107,8 @@
                         <img id="shampoo2_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/64f/64fc4e70-7c87-11ee-b66e-1d63f0e1913d.png?w=456" alt="..." />
                     </div>
                     <div class="portfolio-caption">
-                        <div id="shampoo2_name" class="portfolio-caption-heading">쿨 멘솔 샴푸</div>
-                        <div id="shampoo2_brand" class="portfolio-caption-subheading text-muted">헤드앤숄더</div>
+                        <div id="shampoo2_name" class="portfolio-caption-heading" style="margin-top: 20px;">쿨 멘솔 샴푸</div>
+                        <div id="shampoo2_brand" class="portfolio-caption-subheading text-muted" style="margin-top: 10px;">헤드앤숄더</div>
                     </div>
                 </div>
                 <!-- Portfolio Item 3-->
@@ -79,8 +120,8 @@
                         <img id="shampoo3_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/432/432a4e00-4557-11ec-9d45-77781639a972.jpeg?w=456" alt="..." />
                     </div>
                     <div class="portfolio-caption">
-                        <div id="shampoo3_name" class="portfolio-caption-heading">썬트리 샴푸</div>
-                        <div id="shampoo3_brand" class="portfolio-caption-subheading text-muted">헤드스파7</div>
+                        <div id="shampoo3_name" class="portfolio-caption-heading" style="margin-top: 20px;">썬트리 샴푸</div>
+                        <div id="shampoo3_brand" class="portfolio-caption-subheading text-muted" style="margin-top: 10px;">헤드스파7</div>
                     </div>
                 </div>
                 <!-- Portfolio Item 4-->
@@ -92,8 +133,8 @@
                         <img id="shampoo4_img" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/var/app/current/common/upload/20200514/1589416144764.jpg?w=456" alt="..." />
                     </div>
                     <div class="portfolio-caption">
-                        <div id="shampoo4_name" class="portfolio-caption-heading">탈모증상완화 샴푸 [민감더마]</div>
-                        <div id="shampoo4_brand" class="portfolio-caption-subheading text-muted">라보에이치</div>
+                        <div id="shampoo4_name" class="portfolio-caption-heading" style="margin-top: 20px;">탈모증상완화 샴푸 [민감더마]</div>
+                        <div id="shampoo4_brand" class="portfolio-caption-subheading text-muted" style="margin-top: 10px;">라보에이치</div>
                     </div>
                 </div>
                 <!-- Portfolio Item 5-->
@@ -105,8 +146,8 @@
                         <img id="shampoo_img5" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/914/9144d370-5104-11ee-bfa7-bb8778d0aae6.jpeg?w=456" alt="..." />
                     </div>
                     <div class="portfolio-caption">
-                        <div id="shampoo_name5" class="portfolio-caption-heading">스칼프 퓨리파잉 마이크로바이옴 샴푸</div>
-                        <div id="shampoo_brand5" class="portfolio-caption-subheading text-muted">원오세븐</div>
+                        <div id="shampoo_name5" class="portfolio-caption-heading" style="margin-top: 20px;">스칼프 퓨리파잉 마이크로바이옴 샴푸</div>
+                        <div id="shampoo_brand5" class="portfolio-caption-subheading text-muted" style="margin-top: 10px;">원오세븐</div>
                     </div>
                 </div>
                 <!-- Portfolio Item 6-->
@@ -118,8 +159,8 @@
                         <img id="shampoo_img6" class="img-fluid" src="https://dn5hzapyfrpio.cloudfront.net/product/5fc/5fc63bc0-772e-11eb-9b1a-6fecb8c36eb5.jpeg?w=456" alt="..." />
                     </div>
                     <div class="portfolio-caption">
-                        <div id="shampoo_name6" class="portfolio-caption-heading">애프터올 리바이탈라이징 샴푸</div>
-                        <div id="shampoo_brand6" class="portfolio-caption-subheading text-muted">컨텐트리</div>
+                        <div id="shampoo_name6" class="portfolio-caption-heading" style="margin-top: 20px;">애프터올 리바이탈라이징 샴푸</div>
+                        <div id="shampoo_brand6" class="portfolio-caption-subheading text-muted" style="margin-top: 10px;">컨텐트리</div>
                     </div>
                 </div>
             </div>
@@ -160,7 +201,7 @@
 
                                 <div class="chart">
                                     <div class="row">
-                                        <div clas="col-lg-6" id="skin_container1"></div>
+                                        <div class="col-lg-6" id="skin_container1" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -169,7 +210,7 @@
                                             <link href="{% static '/loss_chart/css/chart.css' %}" rel="stylesheet" />
                                             <script src="{% static '/loss_chart/js/skin_chart.js' %}"></script>
 
-                                        <div clas="col-lg-6" id="age_container1"></div>
+                                        <div class="col-lg-6" id="age_container1" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -224,7 +265,7 @@
 
                                 <div class="chart">
                                     <div class="row">
-                                        <div clas="col-lg-6" id="skin_container2"></div>
+                                        <div class="col-lg-6" id="skin_container2" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -233,7 +274,7 @@
                                             <link href="{% static '/loss_chart/css/chart.css' %}" rel="stylesheet" />
                                             <script src="{% static '/loss_chart/js/skin_chart.js' %}"></script>
 
-                                        <div clas="col-lg-6" id="age_container2"></div>
+                                        <div class="col-lg-6" id="age_container2" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -288,7 +329,7 @@
 
                                 <div class="chart">
                                     <div class="row">
-                                        <div clas="col-lg-6" id="skin_container3"></div>
+                                        <div class="col-lg-6" id="skin_container3" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -297,7 +338,7 @@
                                             <link href="{% static '/loss_chart/css/chart.css' %}" rel="stylesheet" />
                                             <script src="{% static '/loss_chart/js/skin_chart.js' %}"></script>
 
-                                        <div clas="col-lg-6" id="age_container3"></div>
+                                        <div class="col-lg-6" id="age_container3" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -352,7 +393,7 @@
 
                                 <div class="chart">
                                     <div class="row">
-                                        <div clas="col-lg-6" id="skin_container4"></div>
+                                        <div class="col-lg-6" id="skin_container4" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -361,7 +402,7 @@
                                             <link href="{% static '/loss_chart/css/chart.css' %}" rel="stylesheet" />
                                             <script src="{% static '/loss_chart/js/skin_chart.js' %}"></script>
 
-                                        <div clas="col-lg-6" id="age_container4"></div>
+                                        <div class="col-lg-6" id="age_container4" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -416,7 +457,7 @@
 
                                 <div class="chart">
                                     <div class="row">
-                                        <div clas="col-lg-6" id="skin_container5"></div>
+                                        <div class="col-lg-6" id="skin_container5" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -425,7 +466,7 @@
                                             <link href="{% static '/loss_chart/css/chart.css' %}" rel="stylesheet" />
                                             <script src="{% static '/loss_chart/js/skin_chart.js' %}"></script>
 
-                                        <div clas="col-lg-6" id="age_container5"></div>
+                                        <div class="col-lg-6" id="age_container5" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -480,7 +521,7 @@
 
                                 <div class="chart">
                                     <div class="row">
-                                        <div clas="col-lg-6" id="skin_container6"></div>
+                                        <div class="col-lg-6" id="skin_container6" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -489,7 +530,7 @@
                                             <link href="{% static '/loss_chart/css/chart.css' %}" rel="stylesheet" />
                                             <script src="{% static '/loss_chart/js/skin_chart.js' %}"></script>
 
-                                        <div clas="col-lg-6" id="age_container6"></div>
+                                        <div class="col-lg-6" id="age_container6" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
                                             <script src="https://code.highcharts.com/modules/exporting.js"></script>
                                             <script src="https://code.highcharts.com/modules/export-data.js"></script>
