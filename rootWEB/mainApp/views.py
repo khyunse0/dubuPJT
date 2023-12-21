@@ -55,26 +55,30 @@ def my(request) :
 def login(request) :
     print('debug >>> mainApp /login')
     print('debug >>> request method ', request.method)
-    if request.method == "POST":
-        username = request.POST.get("id")
-        password = request.POST.get("pwd")
-        print("debug params >>> ", username, password)
-        try:
-            # user = authenticate(username=username, password=password)
-            user = User_tbl.objects.get(user_id=username, user_pwd=password)
-            print('debug >>> user ', user)
-            if user is not None:
-                request.session['user_id'] = user.user_id
-                print('debug >>> 로그인 성공!')
-                return redirect('index')
-            else:
-                print('debug >>> 로그인 실패!')
-                return render(request, 'mainpage/login.html', {'message': '로그인 실패!'})
-        except User_tbl.DoesNotExist:
-            print('debug >>> 로그인 예외!')
-            return render(request, 'mainpage/login.html', {'message': '아이디와 비밀번호를 다시 확인해주세요'})
-    else:
-        print('debug >>> 로그인 실패1')
+    try:
+        if request.method == "POST":
+            username = request.POST.get("id")
+            password = request.POST.get("pwd")
+            print("debug params >>> ", username, password)
+            try:
+                # user = authenticate(username=username, password=password)
+                user = User_tbl.objects.get(user_id=username, user_pwd=password)
+                print('debug >>> user ', user)
+                if user is not None:
+                    request.session['user_id'] = user.user_id
+                    print('debug >>> 로그인 성공!')
+                    return redirect('index')
+                else:
+                    print('debug >>> 로그인 실패 1')
+                    return render(request, 'mainpage/login.html', {'message': '로그인 실패!'})
+            except User_tbl.DoesNotExist:
+                print('debug >>> 예외 발생 1: ', request)
+                return render(request, 'mainpage/login.html', {'message': '아이디와 비밀번호를 다시 확인해주세요'})
+        else:
+            print('debug >>> 로그인 실패 2')
+            return render(request, 'mainpage/login.html')
+    except Exception as e:
+        print('debug >>> 예외 발생 2: ', e)
         return render(request, 'mainpage/login.html')
 
 
@@ -126,13 +130,18 @@ def logout_view(request):
 
 
 def register(request):
-    if request.method == 'POST':
-        id = request.POST['id']
-        pwd = request.POST['pwd']
-        email = request.POST['email']
-        User_tbl.objects.create(user_id=id, user_pwd=pwd, user_email=email)
-        return redirect('login') # login 페이지로 이동하게 만들기.
-    return render(request, 'mainpage/register.html')  # 'register.html'은 회원가입 폼 템플릿
+    try:
+        if request.method == 'POST':
+            id = request.POST['id']
+            pwd = request.POST['pwd']
+            email = request.POST['email']
+            User_tbl.objects.create(user_id=id, user_pwd=pwd, user_email=email)
+            return redirect('login')
+        return render(request, 'mainpage/register.html')
+    except Exception as e:
+        print('debug >>> Exception: ', e)
+        return render(request, 'mainpage/register.html')
+
 
 
 def find_my_account(request) :
