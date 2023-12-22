@@ -1,15 +1,154 @@
 {% include 'header.html' %}
 
-
 <body>
-    <!-- Page content-->
-    <div class="container">
-        <div class="text-center mt-5">
-            <h1>A Bootstrap 5 Starter Template</h1>
-            <p class="lead">A complete project boilerplate built with Bootstrap</p>
-            <p>Bootstrap v5.2.3</p>
+    {% load static %}
+    <br><br><br><br><br><br>
+    <!-- Section-->
+    <section class="py-5" >
+        <div class="container text-center px-4 px-lg-5 mt-5">
+            <div>
+                <h2 class="section-heading text-uppercase">장바구니 상품🛒</h2>
+            </div>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="../static/img/mypage/샴푸1.png" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">로즈메리 민트 퓨리파잉 샴푸</h5>
+                                <!-- Product price-->
+                                <p>아베다</p>
+                                24,000원
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://www.coupang.com/vp/products/5375828182?itemId=8021395132&vendorItemId=75310105491&pickType=COU_PICK&q=%EB%A1%9C%EC%A6%88%EB%A9%94%EB%A6%AC+%EB%AF%BC%ED%8A%B8+%ED%93%A8%EB%A6%AC%ED%8C%8C%EC%9E%89+%EC%83%B4%ED%91%B8&itemsCount=36&searchId=4b5221e018054d979b77d23bcedd5b66&rank=2&isAddedCart=" target='_blank'>buy</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="../static/img/mypage/샴푸2.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">데미지케어 극손상 샴푸</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <p>미쟝센</p>
+                                <span>13,000원</span>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://www.coupang.com/vp/products/6882959502?itemId=17360206874&vendorItemId=85006374340&q=%EB%8D%B0%EB%AF%B8%EC%A7%80%EC%BC%80%EC%96%B4&itemsCount=36&searchId=23179692f21c4341b649f2a7ab99feb5&rank=12&isAddedCart=" target='_blank'>buy</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="../static/img/mypage/샴푸3.png" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">가려운 두피케어 샴푸</h5>
+                                <!-- Product price-->
+                                <p>헤드앤숄더</p>
+                                <span>16,900원</span>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://www.coupang.com/vp/products/322942318?itemId=2426662596&vendorItemId=5485477886&pickType=COU_PICK&sourceType=srp_product_ads&clickEventId=751bf960-a066-11ee-80bb-63981f095439&korePlacement=15&koreSubPlacement=1&q=%EA%B0%80%EB%A0%A4%EC%9A%B4+%EB%91%90%ED%94%BC%EC%BC%80%EC%96%B4+%EC%83%B4%ED%91%B8&itemsCount=36&searchId=3cbffc4883c448d39230f435d91993cf&rank=0&isAddedCart=" target='_blank'>buy</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="../static/img/mypage/샴푸4(1).jpeg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">블루밍 카밍 샴푸</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <p>베네자임</p>
+                                24,000원
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://www.coupang.com/vp/products/5232336087?itemId=20130569793&vendorItemId=87224562287&q=%EB%B8%94%EB%A3%A8%EB%B0%8D+%EC%B9%B4%EB%B0%8D+%EC%83%B4%ED%91%B8&itemsCount=36&searchId=b201a5510b814cc0ba1a58870d6b010d&rank=1&isAddedCart=" target='_blank'>buy</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg">상품 더보기</button>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+
+    <section class="py-5" >
+        <div class="container text-center px-4 px-lg-5 mt-5">
+        <h2 class="section-heading text-uppercase">지난 검사내역📑</h2>
+            <div class="card mb-3">
+                <h4 class="card-header">사진 내역</h4>
+                <div class="card-body">
+                    <h5 class="card-title"> </h5>
+                </div>
+                <img class="d-block user-select-none" src="../static/img/mypage/scalp.jpg" width="40%" height="300" style="margin-left: 30px; margin: auto;">
+                <div class="card-body">
+                    <p class="card-text">검사일 : 2023/12/22 </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">검사결과 : 양호 </li>
+                    <li class="list-group-item">현재 두피 상태가 양호합니다. </li>
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'scalp' %}" class="card-link">재검사 하러가기</a>
+                    <a href="{% url 'shampoo' %}" class="card-link">샴푸 보러가기</a>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card title</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 {% include 'footer.html' %}

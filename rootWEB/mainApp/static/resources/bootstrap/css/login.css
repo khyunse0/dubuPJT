@@ -4,7 +4,7 @@ html {
 
 body {
   height: 100%;
-  margin: 0;
+  margin: 3%;
   font-family: Arial, Helvetica, sans-serif;
   display: grid;
   justify-items: center;
@@ -13,8 +13,8 @@ body {
 }
 
 #main-holder {
-  width: 50%;
-  height: 70%;
+  width: 60%;
+  height: 110%;
   display: grid;
   justify-items: center;
   align-items: center;
