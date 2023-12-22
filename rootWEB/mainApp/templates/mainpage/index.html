@@ -30,7 +30,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="./scalp">Scalp Check</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'check' %}">Scalp Check</a></li>
                         <li class="nav-item"><a class="nav-link" href="./shampoo">Product</a></li>
                         <li class="nav-item"><a class="nav-link" href="./my">Mypage</a></li>
                         {% if request.session.user_id %}
@@ -52,7 +52,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To </div>
                 <div class="masthead-heading text-uppercase">두피를 부탁해</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="./check">두피 상태 진단하러가기</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'check' %}">두피 상태 진단하러가기</a>
             </div>
         </header>
         <!-- Services-->
