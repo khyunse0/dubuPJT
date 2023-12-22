@@ -4,10 +4,10 @@
     {% load static %}
     <br><br><br><br><br><br>
     <!-- Section-->
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
+    <section class="py-5" >
+        <div class="container text-center px-4 px-lg-5 mt-5">
             <div>
-                <h3>장바구니 상품🛒</h3>
+                <h2 class="section-heading text-uppercase">장바구니 상품🛒</h2>
             </div>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
@@ -106,31 +106,33 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg">상품 더보기</button>
+                </div>
             </div>
         </div>
     </section>
 
 
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
+    <section class="py-5" >
+        <div class="container text-center px-4 px-lg-5 mt-5">
+        <h2 class="section-heading text-uppercase">지난 검사내역📑</h2>
             <div class="card mb-3">
-                <h3 class="card-header">지난 검사내역📑</h3>
+                <h4 class="card-header">사진 내역</h4>
                 <div class="card-body">
-                    <h5 class="card-title">사진 내역 </h5>
+                    <h5 class="card-title"> </h5>
                 </div>
-                <img class="d-block user-select-none" src="../static/img/mypage/scalp.jpg" width="40%" height="300" style="font-size:1.125rem;text-anchor:middle">
-
+                <img class="d-block user-select-none" src="../static/img/mypage/scalp.jpg" width="40%" height="300" style="margin-left: 30px; margin: auto;">
                 <div class="card-body">
                     <p class="card-text">검사일 : 2023/12/22 </p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">검사결과 : 양호 </li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item">현재 두피 상태가 양호합니다. </li>
                 </ul>
                 <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <a href="{% url 'scalp' %}" class="card-link">재검사 하러가기</a>
+                    <a href="{% url 'shampoo' %}" class="card-link">샴푸 보러가기</a>
                 </div>
                 <div class="card-footer text-muted">
                     2 days ago
