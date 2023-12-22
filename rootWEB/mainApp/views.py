@@ -161,3 +161,7 @@ def check_user_id(request):
     user_id = request.GET.get('id', None)
     is_taken = User_tbl.objects.filter(user_id=user_id).exists()
     return JsonResponse({'is_taken': is_taken})
+
+def check(request) :
+    print('debug >> mainApp /find_pwd')
+    return render(request, 'mainpage/check.html')

@@ -18,6 +18,7 @@ urlpatterns = [
     path('loss/', views.loss),
     path('dandruff/', views.dandruff),
     path('check-user-id/', views.check_user_id, name='check_user_id'),
+    path('check/', views.check),
 ]
 
 

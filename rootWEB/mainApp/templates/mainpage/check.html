@@ -1,0 +1,350 @@
+{% include 'header.html' %}
+{% load static %}
+
+<body>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <section>
+        <div id="container"></div>
+    </section>
+    <!-- Page content-->
+    <div class="container">
+        <div class="text-center mt-5">
+
+    <link href="{% static '/product/css/product.css' %}" rel="stylesheet" />
+    <script src="{% static '/product/js/product.js' %}"></script>
+
+    <!-- Portfolio Section-->
+    <section class="page-section portfolio px-5" id="portfolio" style="background-color: #E6F1F7; margin-top: -20px;">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">diagnosis</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div style="margin-top: 9rem; margin-bottom: 7rem;">
+                <h1><i class="bi bi-clipboard-check-fill"></i>&nbsp&nbsp 두피 유형 판단과 샴푸 추천을 위한 진단</h1>
+                <hr style="margin-top: 4rem;">
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center" id="imgShow">
+
+<!--checkbox1-->
+            <div class="holder d-flex align-items-center justify-content-center col-lg-6 mb-4">
+
+                <div class="container">
+                    <!-- FOR DEMO PURPOSE -->
+                    <header class="text-center mb-5">
+                        <h4 class="display-5">Hair Type 1</h4>
+                        <p class="fst-italic text-muted">고객님의 모발 타입을 선택해주세요.</p>
+                    </header>
+
+                    <div class="row">
+                        <div class="mx-auto custom-card">
+
+                            <!-- CHECKBOX LIST -->
+                            <div class="card rounded border-0 shadow-sm position-relative w-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-4 pb-4 border-bottom">
+                                        <div class="text-center">
+                                            <h4 class="text-uppercase fw-weight-bold mb-0">✔ 모발 타입 ①</h4>
+                                        </div>
+                                    </div>
+                                    <div class="form-check form-check-lg">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            생머리
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-lg">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            반곱슬
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            곱슬
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--checkbox2-->
+            <div class="holder d-flex align-items-center justify-content-center col-lg-6 mb-4">
+
+                <div class="container">
+                    <!-- FOR DEMO PURPOSE -->
+                    <header class="text-center mb-5">
+                        <h4 class="display-5">Hair Type 2</h4>
+                        <p class="fst-italic text-muted">고객님의 모발 타입을 선택해주세요.</p>
+                    </header>
+
+
+                    <div class="row">
+                        <div class="mx-auto custom-card">
+
+                            <!-- CHECKBOX LIST -->
+                            <div class="card rounded border-0 shadow-sm position-relative w-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-4 pb-4 border-bottom">
+                                        <div class="ms-3">
+                                            <h4 class="text-uppercase fw-weight-bold mb-0">✔ 모발 타입 ②</h4>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            자연 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            탈색 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            매직 펌 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            염색 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            펌 모발
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--checkbox3-->
+            <div class="holder d-flex align-items-center justify-content-center col-lg-6 mb-4">
+
+                <div class="container">
+                    <!-- FOR DEMO PURPOSE -->
+                    <header class="text-center mb-5">
+                        <h4 class="display-5">Thickness of Hair</h4>
+                        <p class="fst-italic text-muted">고객님의 모발 굵기를 선택해주세요.</p>
+                    </header>
+
+
+                    <div class="row">
+                        <div class="mx-auto custom-card">
+
+                            <!-- CHECKBOX LIST -->
+                            <div class="card rounded border-0 shadow-sm position-relative w-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-4 pb-4 border-bottom">
+                                        <div class="text-center">
+                                            <h4 class="text-uppercase fw-weight-bold mb-0">✔ 모발 굵기</h4>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            가는 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            일반 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            굵은 모발
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--checkbox4-->
+            <div class="holder d-flex align-items-center justify-content-center col-lg-6 mx-auto">
+
+                <div class="container">
+                    <!-- FOR DEMO PURPOSE -->
+                    <header class="text-center mb-5">
+                        <h4 class="display-5">Condition of the Scalp</h4>
+                        <p class="fst-italic text-muted">고객님의 두피 상태를 선택해주세요.</p>
+                    </header>
+
+                    <div class="row">
+                        <div class="mx-auto custom-card">
+
+                            <!-- CHECKBOX LIST -->
+                            <div class="card rounded border-0 shadow-sm position-relative w-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-4 pb-4 border-bottom">
+                                        <div class="text-center">
+                                            <h4 class="text-uppercase fw-weight-bold mb-0">✔ 두피 상태</h4>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            건강함
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            가려움
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            비듬
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            건조함 & 예민함
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            지성
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--checkbox5-->
+            <div class="holder d-flex align-items-center justify-content-center col-lg-6 mx-auto">
+
+                <div class="container">
+                    <!-- FOR DEMO PURPOSE -->
+                    <header class="text-center mb-5">
+                        <h4 class="display-5">Main Concern</h4>
+                        <p class="fst-italic text-muted">고객님의 주요 고민은 무엇인가요?</p>
+                    </header>
+
+
+                    <div class="row">
+                        <div class="mx-auto custom-card">
+
+                            <!-- CHECKBOX LIST -->
+                            <div class="card rounded border-0 shadow-sm position-relative w-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-4 pb-4 border-bottom">
+                                        <div class="text-center">
+                                            <h4 class="text-uppercase fw-weight-bold mb-0">✔ 주요 고민</h4>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            건조한 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            적음 머리숱
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            힘 없는 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            지성 두피 & 모발
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            비듬
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            민감성 두피
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <form class="text-center mt-7" style="margin-top: 10rem;">
+                    <header class="text-center mb-5">
+                        <h4 class="display-5">Your Shampoo</h4>
+                    </header>
+                    <div class="form-row mt-7" >
+                        <h3>🫧  가장 잘 맞았던 샴푸의 이름을 입력해 주세요!</h3>
+                        <div class="col-7 mx-auto" style="margin-top: 3rem;">
+                            <input type="text" class="form-control form-control-lg" placeholder="product name">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            </div>
+
+            <a type="submit" class="btn btn-primary btn-lg button-fixed-width" href="http://127.0.0.1:8000/scalp/">SUBMIT</a>
+
+            <style>
+                .button-fixed-width {
+                    width: 40%;
+                    padding-top: 20px; /* Adjust the top padding to increase button height */
+                    padding-bottom: 20px;
+                    border: none; /* Remove the outer border of the button */
+                    margin-top: 200px;
+                    background-color: 	#DB7093; /* Pink color for the first button */
+                    color: white;
+                }
+            </style>
+        </div>
+    </section>
+        </div>
+    </div>
+
+    <style>
+        .custom-card {
+            width: 300px;
+            height: 300px; /* Set your desired height for the card body */
+            /* You can also set width here if needed */
+        }
+    </style>
+</body>
+
+{% include 'footer.html' %}
