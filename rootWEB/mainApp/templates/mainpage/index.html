@@ -22,15 +22,15 @@
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="static/img/logo1.png" style="width:120px; height:120px"; alt="..." /></a>
+            <div class="container" style="padding-bottom:15px; padding-top:15px;">
+                <a class="navbar-brand" href="#page-top"><img src="static/img/logoya.png" style="width:120px; height:100%"; alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'check' %}">Scalp Check</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./scalp">Scalp Check</a></li>
                         <li class="nav-item"><a class="nav-link" href="./shampoo">Product</a></li>
                         <li class="nav-item"><a class="nav-link" href="./my">Mypage</a></li>
                         {% if request.session.user_id %}
@@ -52,13 +52,10 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To </div>
                 <div class="masthead-heading text-uppercase">두피를 부탁해</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'check' %}">두피 상태 진단하러가기</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="./check">두피 상태 진단하러가기</a>
             </div>
         </header>
         <!-- Services-->
-        <div class="container-fluid p-0">
-            <img src="static/img/serviceAD.png" alt="serviceAD" class="img-fluid" style="width: 100%;">
-        </div>
         <section class="showcase">
             <div class="container-fluid p-0">
                 <section class="page-section" id="services">
@@ -67,6 +64,9 @@
                         <h3 class="section-subheading text-muted">서비스 소개</h3>
                     </div>
                 </section>
+                <div class="container-fluid p-0">
+                    <img src="static/img/serviceAD.png" alt="serviceAD" class="img-fluid" data-aos="fade-down" data-aos-delay="100" style="width: 100%;"><br><br>
+                </div>
                 <div class="row g-0" data-aos="fade-left" data-aos-delay="100">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('static/img/check.jpg')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text" >
