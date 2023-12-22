@@ -99,7 +99,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: #f8f9fa;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -10876,8 +10876,8 @@ p {
 }
 
 #mainNav {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.0rem;
+  padding-bottom: 0.0rem;
   background-color: #ffc800;
 }
 #mainNav .navbar-toggler {
@@ -10888,7 +10888,7 @@ p {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #ffc800;
+  color: rgba(0, 0, 0, 1);
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   letter-spacing: 0.0625em;
@@ -10899,9 +10899,10 @@ p {
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
-  color: #ffc800;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 1);
   letter-spacing: 0.0625em;
+  font-weight: bold;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #ffc800;
@@ -10909,10 +10910,10 @@ p {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.0rem;
+    padding-bottom: 0.0rem;
     border: none;
-    background-color: #001f3f;
+    background-color: rgba(0, 31, 63, 0);
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
@@ -10924,9 +10925,10 @@ p {
     transition: height 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    background-color: #001f3f;
+    padding-top: 0.0rem;
+    padding-bottom: 0.0rem;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -10945,13 +10947,14 @@ p {
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
-  text-align: center;
+  text-align: left;
   color: #fff;
-  background-image: url("/static/img/Scalp-Health.jpg");
+  background-image: url("/static/img/mainbackground2.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  height : 1000px;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -11326,6 +11329,9 @@ section#contact form#contactForm :-ms-input-placeholder {
   .showcase .showcase-text {
     padding: 7rem;
   }
+}
+.showcase {
+    background-color: #f8f9fa; /* 노란색 배경으로 변경 */
 }
 
 

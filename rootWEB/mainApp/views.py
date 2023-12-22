@@ -100,7 +100,7 @@ def upload(request) :
     img = image.img_to_array(img_file)
     img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
     # 모델 위치는 본인 컴퓨터 환경에 맞춰서 재설정 부탁드립니다 !
-    pre_train_model = keras.models.load_model('C:/Users/user/PycharmProjects/Team2PJT/rootWEB/mainApp/static/hair_predict_model2')
+    pre_train_model = keras.models.load_model('C:/Users/rjdls/PycharmProjects/Team2PJT/rootWEB/mainApp/static/hair_predict_model2')
     guess = pre_train_model.predict(img)
     labels = ['양호', '경증 비듬', '중등도 비듬', '중증 비듬', '경증 탈모', '중등도 탈모', '중증 탈모']
     links  = ['/shampoo', '/dandruff', '/dandruff', '/dandruff', '/loss', '/loss', '/loss']
