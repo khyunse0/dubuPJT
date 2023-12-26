@@ -179,3 +179,7 @@ def check_user_id(request):
     user_id = request.GET.get('id', None)
     is_taken = User_tbl.objects.filter(user_id=user_id).exists()
     return JsonResponse({'is_taken': is_taken})
+
+def kakao(request):
+    print('debug >> mainApp /kakao')
+    return render(request, 'mainpage/kakao.html')

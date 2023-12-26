@@ -245,7 +245,29 @@
         <span class="continue_with_google">구글 계정으로 로그인</span>
       </button>
       <button class="social-login-btn kakao"><span class="icon"></span>
-        <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=YOUR_REST_API_KEY&redirect_uri=YOUR_REDIRECT_URI" class="kakao-login-link">카카오로 로그인하기</a>
+        <a href="javascript:kakaoLogin();" class="kakao-login-link">카카오로 로그인하기</a>
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+        <script>
+          window.Kakao.init("cb2d3c6aedb31b4dce568e90fe7eb5c9");
+          function kakaoLogin() {
+            window.Kakao.Auth.login({
+              scope: 'profile_nickname',
+              success: function (authObj) {
+                console.log(authObj);
+                window.Kakao.API.request({
+                  url: '/v2/user/me',
+                  success: res => {
+                    const kakao_account = res.kakao_account;
+                    console.log(kakao_account);
+                  }
+                });
+              },
+              fail: function (err) {
+                console.log(err);
+              }
+            });
+          }
+        </script>
       </button>
     </div>
 

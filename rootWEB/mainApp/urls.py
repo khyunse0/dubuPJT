@@ -18,6 +18,7 @@ urlpatterns = [
     path('loss/', views.loss),
     path('dandruff/', views.dandruff),
     path('check-user-id/', views.check_user_id, name='check_user_id'),
+    path('oauth/kakao/', views.kakao, name='kakao') # http://127.0.0.1:8000/oauth/kakao
 ]
 
 
