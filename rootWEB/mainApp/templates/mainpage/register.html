@@ -246,12 +246,20 @@
       </button>
       <button class="social-login-btn kakao"><span class="icon"></span>
         <a href="javascript:kakaoLogin();" class="kakao-login-link">카카오로 로그인하기</a>
+        <script>
+          function kakaoLogin() {
+            Kakao.Auth.authorize({
+              redirectUri: 'https://127.0.0.1:8000',
+            });
+          }
+        </script>
         <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
         <script>
           window.Kakao.init("cb2d3c6aedb31b4dce568e90fe7eb5c9");
           function kakaoLogin() {
-            window.Kakao.Auth.login({
-              scope: 'profile_nickname',
+            window.Kakao.Auth.authorize({
+              scope: 'profile_nickname, profile_image, friends',
+              redirectUri: 'http://127.0.0.1:8000',
               success: function (authObj) {
                 console.log(authObj);
                 window.Kakao.API.request({
@@ -270,9 +278,7 @@
         </script>
       </button>
     </div>
-
     {% include 'footer.html' %}
-
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
