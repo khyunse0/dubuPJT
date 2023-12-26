@@ -163,6 +163,12 @@
         height:20px;
         border: 0px solid
       }
+
+      .kakao-login-link {
+        color: black;
+        text-decoration: none; /* 링크 밑줄 제거 */
+      }
+
       .submit_registerForm {
         display: flex;
         justify-content: center;
@@ -238,7 +244,9 @@
         </div>
         <span class="continue_with_google">구글 계정으로 로그인</span>
       </button>
-      <button class="social-login-btn kakao"><span class="icon"></span><span>카카오 계정으로 로그인</span></button>
+      <button class="social-login-btn kakao"><span class="icon"></span>
+        <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=YOUR_REST_API_KEY&redirect_uri=YOUR_REDIRECT_URI" class="kakao-login-link">카카오로 로그인하기</a>
+      </button>
     </div>
 
     {% include 'footer.html' %}
