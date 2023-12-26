@@ -146,7 +146,7 @@
 
       .social-login-btn.kakao {
         background-color: #fee500;
-        color: #191919;
+        color: black;
         margin-top: 10px;
         font-size: 16px;
         display: flex;
@@ -180,6 +180,7 @@
         font-size: 12pt;
       }
     </style>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
   </head>
   <body>
   {% include 'header.html' %}
@@ -244,39 +245,50 @@
         </div>
         <span class="continue_with_google">구글 계정으로 로그인</span>
       </button>
-      <button class="social-login-btn kakao"><span class="icon"></span>
-        <a href="javascript:kakaoLogin();" class="kakao-login-link">카카오로 로그인하기</a>
-        <script>
-          function kakaoLogin() {
-            Kakao.Auth.authorize({
-              redirectUri: 'https://127.0.0.1:8000',
-            });
-          }
-        </script>
-        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-        <script>
-          window.Kakao.init("cb2d3c6aedb31b4dce568e90fe7eb5c9");
-          function kakaoLogin() {
-            window.Kakao.Auth.authorize({
-              scope: 'profile_nickname, profile_image, friends',
-              redirectUri: 'http://127.0.0.1:8000',
-              success: function (authObj) {
-                console.log(authObj);
-                window.Kakao.API.request({
-                  url: '/v2/user/me',
-                  success: res => {
-                    const kakao_account = res.kakao_account;
-                    console.log(kakao_account);
-                  }
-                });
-              },
-              fail: function (err) {
-                console.log(err);
-              }
-            });
-          }
-        </script>
+
+      <button class="social-login-btn kakao" onclick="kakaoLogin();">
+        <span class="icon"></span>
+        <a href="http://127.0.0.1:8000/oauth/kakao/callback" class="kakao-login-link">카카오로 로그인하기(REST_API)</a>
       </button>
+
+      <button class="social-login-btn kakao" onclick="kakaoLogin();">
+        <span class="icon"></span>카카오로 로그인하기(JS)
+      </button>
+
+      <p id="token-result"></p>
+      <script>
+        window.Kakao.init("cb2d3c6aedb31b4dce568e90fe7eb5c9"); // 카카오 JavaScript 키를 여기에 입력
+
+        function kakaoLogin() {
+          window.Kakao.Auth.authorize({
+            redirectUri: 'http://127.0.0.1:8000/oauth/kakao/callback', // 여기서 사용하는 Redirect URI를 카카오 개발자 콘솔에서 설정한 값과 일치시켜야 합니다.
+          });
+        }
+
+        function displayToken() {
+          var token = getCookie('authorize-access-token');
+          if (token) {
+            Kakao.Auth.setAccessToken(token);
+            Kakao.Auth.getStatusInfo().then(function(res) {
+              if (res.status === 'connected') {
+                document.getElementById('token-result').innerText = 'login success, token: ' + Kakao.Auth.getAccessToken();
+              }
+              console.log('debug >>> token: ', token)
+            }).catch(function(err) {
+              Kakao.Auth.setAccessToken(null);
+            });
+          }
+        }
+
+        function getCookie(name) {
+          var parts = document.cookie.split(name + '=');
+          if (parts.length === 2) {
+            return parts[1].split(';')[0];
+          }
+        }
+
+        displayToken(); // 함수 호출 위치 변경
+      </script>
     </div>
     {% include 'footer.html' %}
   </body>
