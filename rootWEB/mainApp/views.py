@@ -251,9 +251,21 @@ class KakaoSignInCallBackView(View):
         token_response = requests.post(kakao_token_api, data=data)
         # 카카오 인증 서버와의 티키타카 (디버그용 코드 2)
         # return JsonResponse({"token": token_response.json()})
+        print('debug >>> token_response: ', token_response.json())
 
         access_token = token_response.json().get('access_token')
-        user_info_response = requests.get("https://kapi.kakao.com/v2/user/me", headers={"Authorization": f'Bearer ${access_token}'})
+        print('debug >>> access_token: ', access_token)
+
+        kakao_user_api     = "https://kapi.kakao.com/v2/user/me"
+        header             = {"Authorization": f"Bearer ${access_token}"}
+        user_info_response = requests.get(kakao_user_api, headers=header)
+        print('debug >>> user_info_response: ', user_info_response)
+
+        user_information   = requests.get(kakao_user_api, headers=header).json()
+        print('debug >>> user_information: ', user_information)
+
+        kakao_id        = user_information["id"]
+        # kakao_email     = user_information["kakao_account"]["email"]
 
         return JsonResponse({"user_info": user_info_response.json()})
 
