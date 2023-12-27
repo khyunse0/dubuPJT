@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 from django.core.files.storage import  FileSystemStorage
 from datetime import timezone
 
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import *
 from django.core.paginator import Paginator
@@ -32,10 +32,14 @@ from google.oauth2.credentials import Credentials
 
 from django.core.cache import cache
 from django.utils import timezone
+from .utils import get_tokens_for_user
 import requests
-import os
-from dotenv import load_dotenv
+import uuid
+
 load_dotenv()
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+if os.path.exists(dotenv_path):
+    load_dotenv(dotenv_path)
 
 # Create your views here.
 
@@ -183,6 +187,14 @@ def check_user_id(request):
     is_taken = User_tbl.objects.filter(user_id=user_id).exists()
     return JsonResponse({'is_taken': is_taken})
 
+
+# def KAKAO_JS_KEY(request):
+#     context = {
+#         'KAKAO_JS_KEY': os.environ.get('KAKAO_JS_KEY')
+#     }
+#     return render(request, 'register.html', context)
+
+
 # def kakao_callback(request):
 #     print('debug >> view - mainApp/kakao_callback')
 #     # code = request.GET.get('code')
@@ -228,6 +240,7 @@ def check_user_id(request):
     # # 로그인 후 리디렉션할 페이지로 이동
     # return redirect('index')
 
+
 from django.views import View
 class KakaoSignInCallBackView(View):
     def get(self, request):
@@ -243,7 +256,7 @@ class KakaoSignInCallBackView(View):
         kakao_token_api = "https://kauth.kakao.com/oauth/token"
         data = {
             'grant_type': 'authorization_code',
-            'client_id' : "e57ca5360b6efab3a1c352a397c67f0d", # os.getenv('REST_API_key'),
+            'client_id' : os.getenv('REST_API_KEY'),
             'redirection_uri': "http://127.0.0.1:8000/oauth/kakao/callback",
             'code': auth_code,
         }
@@ -263,11 +276,46 @@ class KakaoSignInCallBackView(View):
 
         user_information   = requests.get(kakao_user_api, headers=header).json()
         print('debug >>> user_information: ', user_information)
+        # 디버그용 코드임.
+        # return JsonResponse({"user_info": user_info_response.json()})
 
-        kakao_id        = user_information["id"]
-        # kakao_email     = user_information["kakao_account"]["email"]
+        kakao_id           = user_information["id"]
+        kakao_email        = user_information["kakao_account"]["email"]
+        profile_image_url  = user_information["properties"]["profile_image"]
+        print('debug >>> kakao id & email & profile image: ', kakao_id, kakao_email, profile_image_url)
 
-        return JsonResponse({"user_info": user_info_response.json()})
+        # # 사용자 찾기 또는 생성
+        # if not User_tbl.objects.filter(user_id=kakao_id).exists():
+        #     user = User_tbl.objects.create(user_id=kakao_id, user_pwd=uuid.uuid4().hex, user_email=kakao_email)
+        #     print('debug >>> 계정 생성과 함께 임의의 비밀번호가 설정되었습니다. user: ', user)
+        #     # user.save() => create() 메서드는 실제로 save()를 내부적으로 호출하기 때문에 이 부분은 필요하지 않을 수도 있다.
+        # else:
+        #     user = User_tbl.objects.get(user_id=kakao_id)
+        #     print('debug >>> 이미 존재하는 계정이라 아이디를 가져왔습니다.')
+        # # user, created = User_tbl.objects.get_or_create(user_id=kakao_id, defaults={'user_email':kakao_email})
+        #
+        # # JWT 토큰 발급
+        # token = get_tokens_for_user(user)
+        # print('debug >>> kakao_token: ', token)
+        #
+        # # 필요한 경우 추가적인 사용자 정보 설정
+        # # if created:
+        # #     # 새 사용자의 경우, 임의의 안전한 비밀번호 설정
+        # #     user.set_password(uuid.uuid4().hex)
+        # #     print('debug >>> 임의의 비밀번호가 설정되었습니다. => view-get()')
+        # #     user.save()
+        # # print('debug >>> user & token: ', {'user': {'username': user.user_id, 'email': user.user_email}, 'token': token})
+        # # return JsonResponse({'user': {'username': user.user_id, 'email': user.user_email}, 'token': token})
+
+
+        request.session['user_id'] = kakao_id
+        return redirect('/scalp/')
+def kakao_api(request):
+    print('debug >>> mainApp/kakao_api()')
+    context = {
+        'KAKAO_JS_KEY': os.environ.get('KAKAO_JS_KEY')
+    }
+    return render(request, 'register.html', context)
 
 # 내일 할 것.
 # 남은 Auth 로직 처리
