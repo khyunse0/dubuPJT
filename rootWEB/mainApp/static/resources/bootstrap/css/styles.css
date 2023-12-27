@@ -73,10 +73,10 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #ffc800;
-  --bs-link-hover-color: #cca000;
+  --bs-link-color: #1abc9c;
+  --bs-link-hover-color: #1abc9c;
   --bs-code-color: #d63384;
-  --bs-highlight-bg: #fff4cc;
+  --bs-highlight-bg: #1abc9c;
 }
 
 *,
@@ -2846,19 +2846,18 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #ffc800;
-  --bs-btn-border-color: #ffc800;
+  --bs-btn-bg: #cf7897;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #d9aa00;
-  --bs-btn-hover-border-color: #cca000;
+  --bs-btn-hover-bg: #1abc9c;
+  --bs-btn-hover-border-color: #1abc9c;
   --bs-btn-focus-shadow-rgb: 255, 208, 38;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #cca000;
-  --bs-btn-active-border-color: #bf9600;
+  --bs-btn-active-bg: #1abc9c;
+  --bs-btn-active-border-color: #1abc9c;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #ffc800;
-  --bs-btn-disabled-border-color: #ffc800;
+  --bs-btn-disabled-bg: #CE678C;
+  --bs-btn-disabled-border-color: #CE678C;
 }
 
 .btn-secondary {
@@ -10878,11 +10877,11 @@ p {
 #mainNav {
   padding-top: 0.0rem;
   padding-bottom: 0.0rem;
-  background-color: #ffc800;
+  background-color: #8c8b8b;
 }
 #mainNav .navbar-toggler {
   padding: 0rem;
-  font-size: 0.75rem;
+  font-size: 1.5rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
   font-weight: 700;
@@ -10905,7 +10904,7 @@ p {
   font-weight: bold;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ffc800;
+  color: #1abc9c;
 }
 
 @media (min-width: 992px) {
@@ -10945,35 +10944,37 @@ p {
   }
 }
 header.masthead {
-  padding-top: 10.5rem;
+  padding-top: 8.5rem;
   padding-bottom: 6rem;
   text-align: left;
   color: #fff;
+  text-shadow: 6px 2px 2px gray;
   background-image: url("/static/img/mainbackground2.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height : 1000px;
+  height : 700px;
+
 }
 header.masthead .masthead-subheading {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-style: italic;
   line-height: 1.5rem;
   margin-bottom: 25px;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:'가나초콜릿';
 }
 header.masthead .masthead-heading {
-  font-size: 3.25rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 3.25rem;
   margin-bottom: 2rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:'가나초콜릿';
 }
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
+    padding-top: 14rem;
     padding-bottom: 12.5rem;
   }
   header.masthead .masthead-subheading {
@@ -10983,7 +10984,7 @@ header.masthead .masthead-heading {
     margin-bottom: 2rem;
   }
   header.masthead .masthead-heading {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 700;
     line-height: 4.5rem;
     margin-bottom: 4rem;
@@ -11575,7 +11576,7 @@ button::after {
 }
 
 button {
-  background: #ffc800;
+  background: #CE678C;
   border: 3px solid #fff;
   border-radius: 5px;
   color: #fff;
@@ -11860,4 +11861,18 @@ button:hover {
   font-size: 20px;
   padding: 20px;
   text-align: center;
+}
+
+
+@font-face {
+    font-family: '강원교육튼튼';
+    src: url('C:/Users/user/PycharmProjects/Team2PJT/rootWEB/mainApp/static/font/강원교육튼튼.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: '가나초콜릿';
+    src: url('C:/Users/user/PycharmProjects/Team2PJT/rootWEB/mainApp/static/font/Ghanachocolate.ttf') format('woff2');
+}
+body {
+    font-family: '강원교육튼튼', '가나초콜릿', sans-serif;
 }
