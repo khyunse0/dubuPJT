@@ -109,7 +109,6 @@ def upload(request) :
     return render(request, 'mainpage/scalp_result.html', {'predicted_label': predicted_label, 'fileName' : fileName, 'links_label' : links_label})
 
 
-
 def shampooButton(request):
     return render(request, 'mainpage/loss.html')
 
