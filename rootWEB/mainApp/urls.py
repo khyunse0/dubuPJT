@@ -19,6 +19,7 @@ urlpatterns = [
     path('dandruff/', views.dandruff),
     path('check-user-id/', views.check_user_id, name='check_user_id'),
     path('check/', views.check, name = 'check'),
+    path('oauth/kakao/callback/', views.KakaoSignInCallBackView.as_view(), name='kakao_callback')
 ]
 
 
