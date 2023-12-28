@@ -11863,16 +11863,13 @@ button:hover {
   text-align: center;
 }
 
-
-@font-face {
-    font-family: '강원교육튼튼';
-    src: url('C:/Users/user/PycharmProjects/Team2PJT/rootWEB/mainApp/static/font/강원교육튼튼.ttf') format('woff2');
-}
+{% load static %}
 
 @font-face {
     font-family: '가나초콜릿';
-    src: url('C:/Users/user/PycharmProjects/Team2PJT/rootWEB/mainApp/static/font/Ghanachocolate.ttf') format('woff2');
+    src: url("{% static 'font/Ghanachocolate.ttf' %}") format('woff2');
 }
+
 body {
-    font-family: '강원교육튼튼', '가나초콜릿', sans-serif;
+    font-family: '가나초콜릿', sans-serif;
 }
