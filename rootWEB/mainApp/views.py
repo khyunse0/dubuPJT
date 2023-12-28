@@ -191,70 +191,9 @@ def check(request) :
     return render(request, 'mainpage/check.html')
 
 
-# def KAKAO_JS_KEY(request):
-#     context = {
-#         'KAKAO_JS_KEY': os.environ.get('KAKAO_JS_KEY')
-#     }
-#     return render(request, 'register.html', context)
-
-
-# def kakao_callback(request):
-#     print('debug >> view - mainApp/kakao_callback')
-#     # code = request.GET.get('code')
-#     REST_API_key = os.getenv("REST_API_key")
-#     token_request = requests.get(
-#         f"https://kauth.kakao.com/oauth/authorize?response_type=code&client_id={REST_API_key}&redirect_uri=http://127.0.0.1:8000/oauth/kakao/callback"
-#     )
-#
-#     token_json = token_request.json()
-#     print('debug >>> token_json :', token_json)
-#     error = token_json.get("error", None)
-#     if error is not None:
-#         raise Exception("Can't get authorization code.")
-#
-#     access_token = token_json.get("access_token")
-    # 이제 access_token을 사용하여 사용자 정보를 가져오고, 로그인 처리를 합니다.
-    #
-    # # 카카오 사용자 정보 요청
-    # profile_request = requests.get(
-    #     "https://kapi.kakao.com/v2/user/me",
-    #     headers={"Authorization": f"Bearer {access_token}"},
-    # )
-    # profile_json = profile_request.json()
-    # kakao_account = profile_json.get("kakao_account")
-    # email = kakao_account.get("email", None)
-    #
-    # # 여기서부터는 사용자의 이메일을 사용하여 사용자를 식별하고,
-    # # 우리 시스템에 로그인 처리를 수행합니다.
-    # # 예를 들어, 사용자 모델을 조회하고 세션을 만드는 등의 작업을 할 수 있습니다.
-    # # 만약 사용자가 새로운 사용자라면, 계정을 생성하는 과정도 필요할 수 있습니다.
-    #
-    # # 예를 들어, Django의 auth 시스템을 사용하면 다음과 같이 할 수 있습니다.
-    # try:
-    #     user = User.objects.get(email=email)  # 가정: User 모델에서 이메일을 사용하여 사용자를 조회
-    # except User.DoesNotExist:
-    #     # 새 사용자라면, 계정을 생성할 수 있습니다.
-    #     user = User.objects.create_user(username=email, email=email)
-    #     user.save()
-    #
-    # # 사용자 로그인 처리
-    # login(request, user)
-    #
-    # # 로그인 후 리디렉션할 페이지로 이동
-    # return redirect('index')
-
-
 from django.views import View
 class KakaoSignInCallBackView(View):
     def get(self, request):
-        # uri에 잘 출력되는지 확인하기 (디버그용 코드 1)
-        # app_key= os.getenv('REST_API_key')
-        # redirect_uri   = "http://127.0.0.1:8000/oauth/kakao/callback"
-        # kakao_auth_api = "https://kauth.kakao.com/oauth/authorize?response_type=code"
-        # return redirect(
-        #     f'{kakao_auth_api}&client_id={app_key}&redirect_uri={redirect_uri}'
-        # )
-
         auth_code = request.GET.get('code')
         kakao_token_api = "https://kauth.kakao.com/oauth/token"
         data = {
@@ -263,72 +202,18 @@ class KakaoSignInCallBackView(View):
             'redirection_uri': "http://127.0.0.1:8000/oauth/kakao/callback",
             'code': auth_code,
         }
-
         token_response = requests.post(kakao_token_api, data=data)
-        # 카카오 인증 서버와의 티키타카 (디버그용 코드 2)
-        # return JsonResponse({"token": token_response.json()})
-        print('debug >>> token_response: ', token_response.json())
-
         access_token = token_response.json().get('access_token')
-        print('debug >>> access_token: ', access_token)
-
         kakao_user_api     = "https://kapi.kakao.com/v2/user/me"
         header             = {"Authorization": f"Bearer ${access_token}"}
-        user_info_response = requests.get(kakao_user_api, headers=header)
-        print('debug >>> user_info_response: ', user_info_response)
-
         user_information   = requests.get(kakao_user_api, headers=header).json()
-        print('debug >>> user_information: ', user_information)
-        # 디버그용 코드임.
-        # return JsonResponse({"user_info": user_info_response.json()})
-
         kakao_id           = user_information["id"]
-        kakao_email        = user_information["kakao_account"]["email"]
-        profile_image_url  = user_information["properties"]["profile_image"]
-        print('debug >>> kakao id & email & profile image: ', kakao_id, kakao_email, profile_image_url)
-
-        # # 사용자 찾기 또는 생성
-        # if not User_tbl.objects.filter(user_id=kakao_id).exists():
-        #     user = User_tbl.objects.create(user_id=kakao_id, user_pwd=uuid.uuid4().hex, user_email=kakao_email)
-        #     print('debug >>> 계정 생성과 함께 임의의 비밀번호가 설정되었습니다. user: ', user)
-        #     # user.save() => create() 메서드는 실제로 save()를 내부적으로 호출하기 때문에 이 부분은 필요하지 않을 수도 있다.
-        # else:
-        #     user = User_tbl.objects.get(user_id=kakao_id)
-        #     print('debug >>> 이미 존재하는 계정이라 아이디를 가져왔습니다.')
-        # # user, created = User_tbl.objects.get_or_create(user_id=kakao_id, defaults={'user_email':kakao_email})
-        #
-        # # JWT 토큰 발급
-        # token = get_tokens_for_user(user)
-        # print('debug >>> kakao_token: ', token)
-        #
-        # # 필요한 경우 추가적인 사용자 정보 설정
-        # # if created:
-        # #     # 새 사용자의 경우, 임의의 안전한 비밀번호 설정
-        # #     user.set_password(uuid.uuid4().hex)
-        # #     print('debug >>> 임의의 비밀번호가 설정되었습니다. => view-get()')
-        # #     user.save()
-        # # print('debug >>> user & token: ', {'user': {'username': user.user_id, 'email': user.user_email}, 'token': token})
-        # # return JsonResponse({'user': {'username': user.user_id, 'email': user.user_email}, 'token': token})
-
-
         request.session['user_id'] = kakao_id
         return redirect('/scalp/')
+
 def kakao_api(request):
     print('debug >>> mainApp/kakao_api()')
     context = {
         'KAKAO_JS_KEY': os.environ.get('KAKAO_JS_KEY')
     }
     return render(request, 'register.html', context)
-
-# 내일 할 것.
-# 남은 Auth 로직 처리
-#
-# 우리의 목적은 카카오 계정으로 우리 서비스에 회원가입 하거나 로그인 하는 것이었으므로, 남은 로직을 View에 구현해 주면 되겠다.
-#
-# 간단히 로직만 생각해보자면,
-#
-# 위에서 진행한 내용으로 유저의 Kakao "ID"를 알아낸다.
-# 해당 카카오 ID를 갖는 유저를 우리의 유저 DB에서 찾아본다.
-# 존재하면 로그인 시키고 JWT 토큰을 발행해준다.
-# 존재하지 않으면 회원가입 시키고 JWT 토큰을 발행해준다.
-# 이렇게 하면 프론트에서 단순히 Django 백엔드의 소셜 로그인 엔드포인트로 연결해주는것 만으로도 카카오 계정을 통한 소셜 로그인이 가능하다.
