@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-</head>
+{% include 'header.html' %}
+{% load static %}
 
-  <body>
-  {% include 'header.html' %}
-  {% load static %}
-
+<body>
     <!-- Page content-->
     <div class="container">
         <div class="text-center mt-5">
 <!--    <link href="{% static '/resources/bootstrap/css/styles.css'%}" rel="stylesheet" />-->
     <link href="{% static '/product/css/product.css' %}" rel="stylesheet" />
     <script src="{% static '/product/js/product.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
     <!-- Portfolio Section-->
     <br><br><br>
@@ -179,20 +175,25 @@
                                     <div class="divider-custom-line"></div>
                                 </div>
                                 <div class="row g-4 g-lg-5">
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-5 mb-4 pt-5">
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/product/20200529/1590713643234.jpg?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 m-auto">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 니옥신<br><br><br>가격 : 22,000원<br><br><br>제품 설명 : 이미 손상된 일반모의 두피 강화 케어- 투명하고 가벼운 제형의 풍성한 거품으로 두피 잔여물을 말끔하게 씻어 내 청결한 두피 환경 조성<br><br><br></h5>
+                                        <h5><span class="badge rounded-pill text-start" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;니옥신</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill text-start" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 22,000원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill text-start" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">이미 손상된 일반모의 두피 강화 케어- 투명하고 가벼운 제형의 풍성한 거품으로 두피 잔여물을 말끔하게 씻어 내 청결한 두피 환경 조성</h5>
                                     </div>
+
                                 </div>
 
-                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container1" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -242,20 +243,23 @@
                                     <div class="divider-custom-line"></div>
                                 </div>
                                 <div class="row g-4 g-lg-5">
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-5 mb-4 pt-5">
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/5bf/5bfb66d0-ea4c-11ed-aa5d-3bc7cc24eed0.png?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 m-auto">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 헤드앤숄더<br><br><br>가격 : 16,900원<br><br><br>제품 설명 : * 본 제품은 리뉴얼된 제품입니다.더욱 확실하게 두피 가려움 완화에 도움을 주는 헤드앤숄더 가려운 두피 케어- 유칼립투스 성분이 가려움 완화- 최대 72시간 비듬 걱정없는 두피 토탈 솔루션<br><br><br></h5>
-
+                                        <h5><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;헤드앤숄더</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 16,900원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">더욱 확실하게 두피 가려움 완화에 도움을 주는 헤드앤숄더 가려운 두피 케어- 유칼립투스 성분이 가려움 완화- 최대 72시간 비듬 걱정없는 두피 토탈 솔루션</h5>
                                     </div>
                                 </div>
-                                    <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container2" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -309,16 +313,19 @@
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/b7c/b7c00e80-308a-11ec-aa4a-0d6bb813ddfe.jpeg?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 mb-4 pt-5">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 트리셀<br><br><br>가격 : 25,000원<br><br><br>제품 설명 : 나이트 루틴에 맞게 두피를 깔끔히 세정해주는 나이트 샴푸- 탈모증상완화에 도움을 주는 기능성 샴푸- 두피에 쌓인 노폐물을 깨끗하게 씻어내는 헤비한 폼- 새벽 숲속을 거닐며 느끼는 힐링 향<br><br><br></h5>
+                                        <h5><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;트리셀</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 25,000원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">나이트 루틴에 맞게 두피를 깔끔히 세정해주는 나이트 샴푸- 탈모증상완화에 도움을 주는 기능성 샴푸- 두피에 쌓인 노폐물을 깨끗하게 씻어내는 헤비한 폼- 새벽 숲속을 거닐며 느끼는 힐링 향</h5>
                                     </div>
                                 </div>
-
-                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container3" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -372,16 +379,19 @@
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/c85/c8574310-65da-11eb-ae5f-0bebc48cabed.jpeg?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 mb-4 pt-5">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 러쉬<br><br><br>가격 : 19,000원<br><br><br>제품 설명 : 제비꽃의 관능적인 향기에 미역 추출물과 코코넛 오일을 더해 모발 가득 촉촉함을 선사하는 샴푸<br><br><br></h5>
+                                        <h5><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;러쉬</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 19,000원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">제비꽃의 관능적인 향기에 미역 추출물과 코코넛 오일을 더해 모발 가득 촉촉함을 선사하는 샴푸</h5>
                                     </div>
                                 </div>
-
-                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container4" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -435,16 +445,19 @@
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20141106/1415243926345.jpg?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 mb-4 pt-5">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 오가니스트<br><br><br>가격 : 15,800원<br><br><br>제품 설명 : 놀라운 자연 한방울의 힘, 두피ㆍ모발 케어 1. 자연에 보다 가까운 처방 - 타임, 세이지, 라벤더, 로즈마리, 로즈힙을 정성스레 발효한 내추럴 허브 발효초 함유 - 실리콘/석유계 계면활성제/파라벤 무첨가 2. 두피는 산뜻, 모발은 부드럽게. 두피ㆍ모발 케어 - 두피 정화 효과로 두피를 더욱 청결하고 상쾌하게 - 모발 영양 공급으로 부드럽고 탄력있게 3. 약산성 처방으로 건강한 모발 - pH5.2~5.7 의 범위로 관리되는 포뮬러 4. 오렌지 블라썸과 시트러스가 조화를 이룬 산뜻하고 내추럴한 향기<br><br><br></h5>
+                                        <h5><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;오가니스트</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 15,800원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">놀라운 자연 한방울의 힘, 두피ㆍ모발 케어, 자연에 보다 가까운 처방 - 타임, 세이지, 라벤더, 로즈마리, 로즈힙을 정성스레 발효한 내추럴 허브 발효초 함유 - 실리콘/석유계 계면활성제/파라벤 무첨가, 오렌지 블라썸과 시트러스가 조화를 이룬 산뜻하고 내추럴한 향기</h5>
                                     </div>
                                 </div>
-
-                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container5" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -498,16 +511,19 @@
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20191202/1575246676785.jpg?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 mb-4 pt-5">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 아모스프로페셔널<br><br><br>가격 : 28,000원<br><br><br>제품 설명 : 깨끗한 두피 환경을 만들어주는 탈모 증상 완화 기능성 샴푸- 실리콘 오일 무첨가로 가벼운 사용감 부여- 중건성 두피 타입을 위한 수분 보습력 강화 샴푸<br><br><br></h5>
+                                        <h5><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;아모스프로페셔널</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 28,000원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">깨끗한 두피 환경을 만들어주는 탈모 증상 완화 기능성 샴푸- 실리콘 오일 무첨가로 가벼운 사용감 부여- 중건성 두피 타입을 위한 수분 보습력 강화 샴푸</h5>
                                     </div>
                                 </div>
-
-                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container6" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -561,16 +577,19 @@
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/411/411785e0-da8c-11ec-a150-3fa55b723fed.png?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 mb-4 pt-5">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 아모스프로페셔널<br><br><br>가격 : 28,000원<br><br><br>제품 설명 : 스트레스로 약해진 두피와 모발을 위한 탈모 증상 완화 샴푸 - 탈모 증상 완화 기능성 및 꺠끗한 두피 환경 개선 - 실리콘 오일 무첨가로 가벼운 사용감 부여 - 과다 분비되는 피지 및 노폐물 세정 케어<br><br><br></h5>
+                                        <h5><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;아모스프로페셔널</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 28,000원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">스트레스로 약해진 두피와 모발을 위한 탈모 증상 완화 샴푸 - 탈모 증상 완화 기능성 및 꺠끗한 두피 환경 개선 - 실리콘 오일 무첨가로 가벼운 사용감 부여 - 과다 분비되는 피지 및 노폐물 세정 케어</h5>
                                     </div>
                                 </div>
-
-                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container7" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -624,16 +643,19 @@
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20170705/1499238267874.png?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 mb-4 pt-5">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 러쉬<br><br><br>가격 : 18,500원<br><br><br>제품 설명 : 뉴는 두피와 모발을 건강하게 지켜주고 깔끔한 세정을 돕는 샴푸바입니다. 불규칙한 생활리듬이나 외부 환경으로 인한 자극으로부터 두피를 보호하고 깨끗하고 건강한 두피 상태를 유지하는데 도움을 줍니다.<br><br><br></h5>
+                                        <h5><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;러쉬</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 18,500원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">뉴는 두피와 모발을 건강하게 지켜주고 깔끔한 세정을 돕는 샴푸바입니다. 불규칙한 생활리듬이나 외부 환경으로 인한 자극으로부터 두피를 보호하고 깨끗하고 건강한 두피 상태를 유지하는데 도움을 줍니다.</h5>
                                     </div>
                                 </div>
-
-                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container8" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -690,16 +712,19 @@
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5" src="https://dn5hzapyfrpio.cloudfront.net/product/e21/e216aa30-785a-11ee-98b5-3d1fae1037a0.jpeg?w=456" alt="..." />
                                     </div>
-                                    <div class="col-lg-7">
+                                    <div class="col-lg-7 mb-4 pt-5">
                                         <!-- Portfolio Modal - Text-->
-                                        <h5 class="mb-4">브랜드 : 아미노비오틴<br><br><br>가격 : 14,900원<br><br><br>제품 설명 : 탈모 증상 완화와 부드럽게 비오틴 + 단백질 케어- 모발 빠짐 59.8% 감소- 모발 단백질 결합력 38.9% 증가- 자극 받은 두피 진정 11.23% 개선<br><br><br></h5>
+                                        <h5><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-balloon-heart"></i>&nbsp; 브랜드</span>&nbsp&nbsp;&nbsp;아미노비오틴</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-tags"></i>&nbsp; 가격</span>&nbsp&nbsp; 14,900원</h5>
+                                        <h5 class="pt-4"><span class="badge rounded-pill" style="background-color: #4EAAE8; font-size: 0.85em;"><i class="bi bi-book"></i>&nbsp; 제품 설명</span></h5>
+                                        <h5 class="pt-2">탈모 증상 완화와 부드럽게 비오틴 + 단백질 케어- 모발 빠짐 59.8% 감소- 모발 단백질 결합력 38.9% 증가- 자극 받은 두피 진정 11.23% 개선</h5>
                                     </div>
                                 </div>
-
-                                <p><button class="btn btn-primary" data-bs-dismiss="modal">
-                                    장바구니
+                                <p><button class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #DB7093; border: none">
+                                    <i class="bi bi-cart-check"></i>&nbsp&nbsp; 장바구니
                                 </button></p>
-                                <div class="chart">
+                                <hr style="margin-top: 4rem; margin-bottom: 4rem;">
+                                <div class="chart pb-5">
                                     <div class="row">
                                         <div class="col-lg-6" id="skin_container9" style="height: 300px;"></div>
                                             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -737,6 +762,9 @@
 
         </div>
     </div>
-  {% include 'footer.html' %}
-  </body>
-</html>
+
+
+
+</body>
+
+{% include 'footer.html' %}
