@@ -9,11 +9,11 @@ django-storages==1.14.1
 
 # 데이터 분석 및 머신러닝
 numpy==1.24.3
-tensorflow-cpu==2.11.0
+tensorflow-cpu==2.10.0      # 버전 조정 (의존성 문제 해결)
 scikit-learn==1.2.2
 Pillow==9.5.0
 
-# 인증 및 OAuth2 (의존성 충돌 해결)
+# 인증 및 OAuth2
 google-auth-oauthlib==1.0.0
 google-auth==2.20.0
 oauthlib==3.2.2
@@ -25,4 +25,8 @@ requests==2.31.0
 python-dotenv==1.0.0
 
 # 캐시 관리
-django-redis==5.0
+django-redis==5.0.0
+
+# 기타 유용한 도구들
+django-extensions==3.2.3
+django-filter==22.1
