@@ -2,64 +2,30 @@
 Django==4.2.2
 django-environ==0.11.2
 
-# 데이터베이스 드라이버
-psycopg2-binary==2.9.6       # PostgreSQL
-mysqlclient==2.2.0           # MySQL
-pymysql==1.1.0               # MySQL (대안)
-dj-database-url==1.2.0       # DB URL 파싱
-
-# API 개발
-djangorestframework==3.15.0
-djangorestframework-simplejwt==5.4.0
-django-cors-headers==3.14.0
-
-# 인증 및 권한 관리
-django-allauth==0.56.0       # 소셜 로그인 (Google, Facebook)
-django-rest-auth==0.9.5      # 기본 인증 API
-django-rest-knox==4.2.0      # Python 3.9 호환
-
-# 보안 및 성능
-django-axes==6.0.2           # 로그인 보안
-django-secure==1.0.0         # 보안 헤더 설정
-django-redis==5.0.0          # Python 3.9 호환
-
-# 이미지 및 파일 관리
+# 파일 시스템 관리
 Pillow==9.5.0
-django-imagekit==4.0.2       # Python 3.9 호환
+django-imagekit==4.0.2
 django-storages==1.14.1
+
+# 데이터 분석 및 머신러닝
+numpy==1.24.3
+tensorflow-cpu==2.11.0
+scikit-learn==1.2.2
+Pillow==9.5.0
+
+# 인증 및 OAuth2
+google-auth-oauthlib==1.0.0
+google-auth==2.20.0
+
+# HTTP 요청
+requests==2.31.0
 
 # 환경 변수 관리
 python-dotenv==1.0.0
 
-# 테스트 및 디버깅
-django-debug-toolbar==3.6.0  # Python 3.9 호환
-coverage==7.3.0
-pytest-django==4.5.2
-pytest==7.4.0
-
-# 정적 파일 처리
-whitenoise==6.5.0
-django-compressor==4.4.0
+# 캐시 관리
+django-redis==5.0.0
 
 # 기타 유용한 도구들
-django-extensions==3.2.3     # Python 3.9 호환
-django-filter==22.1          # Python 3.9 호환
-django-crispy-forms==1.14.0  # Python 3.9 호환
-django-import-export==3.3.0
-django-health-check==3.16.4  # Python 3.9 호환
-django-rest-swagger==2.2.0
-django-webpack-loader==1.7.0
-django-taggit==4.0.0         # Python 3.9 호환
-
-# 데이터 분석
-numpy==1.24.3                # Python 3.9 호환
-pandas==1.5.3                # Python 3.9 호환
-scikit-learn==1.2.2          # Python 3.9 호환
-matplotlib==3.7.1            # Python 3.9 호환
-seaborn==0.12.2              # Python 3.9 호환
-
-# 머신러닝 / 딥러닝
-tensorflow==2.11.0           # Python 3.9 호환 (CPU 버전)
-torch==1.13.1                # Python 3.9 호환 (기본 버전)
-torchvision==0.14.1          # Python 3.9 호환 (기본 버전)
-keras==2.11.0                # Python 3.9 호환 (tensorflow와 호환)
+django-extensions==3.2.3
+django-filter==22.1
