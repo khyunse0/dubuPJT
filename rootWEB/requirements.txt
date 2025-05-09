@@ -13,9 +13,10 @@ tensorflow-cpu==2.11.0
 scikit-learn==1.2.2
 Pillow==9.5.0
 
-# 인증 및 OAuth2 (충돌 해결)
-google-auth-oauthlib==0.5.3
+# 인증 및 OAuth2 (의존성 충돌 해결)
+google-auth-oauthlib==1.0.0
 google-auth==2.20.0
+oauthlib==3.2.2
 
 # HTTP 요청
 requests==2.31.0
@@ -24,8 +25,4 @@ requests==2.31.0
 python-dotenv==1.0.0
 
 # 캐시 관리
-django-redis==5.0.0
-
-# 기타 유용한 도구들
-django-extensions==3.2.3
-django-filter==22.1
+django-redis==5.0
