@@ -13,8 +13,8 @@ tensorflow-cpu==2.11.0
 scikit-learn==1.2.2
 Pillow==9.5.0
 
-# 인증 및 OAuth2
-google-auth-oauthlib==1.0.0
+# 인증 및 OAuth2 (충돌 해결)
+google-auth-oauthlib==0.5.3
 google-auth==2.20.0
 
 # HTTP 요청
