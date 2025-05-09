@@ -50,5 +50,3 @@ django-health-check==3.16.4  # Python 3.9 호환
 django-rest-swagger==2.2.0
 django-webpack-loader==1.7.0
 django-taggit==4.0.0         # Python 3.9 호환
-django-summernote==0.8.30.1
-requests==2.31.0
