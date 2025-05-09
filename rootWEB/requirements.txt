@@ -50,3 +50,7 @@ django-health-check==3.16.4  # Python 3.9 호환
 django-rest-swagger==2.2.0
 django-webpack-loader==1.7.0
 django-taggit==4.0.0         # Python 3.9 호환
+
+# 데이터 분석
+numpy==1.24.3                # Python 3.9 호환
+pandas==1.5.3                # Python 3.9 호환
