@@ -125,6 +125,7 @@ def upload(request):
 
     # 이미지 전처리
     img_file = Image.open(file)
+    original_img = Image.open(file)
     img_file = img_file.resize((60, 80))
     img = image.img_to_array(img_file)
     img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
@@ -147,7 +148,7 @@ def upload(request):
     
     # 이미지 Base64 인코딩
     buffered = BytesIO()
-    img_file.save(buffered, format="JPEG")
+    original_img.save(buffered, format="JPEG")
     img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
     img_src = f"data:image/jpeg;base64,{img_base64}"
 
