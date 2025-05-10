@@ -45,10 +45,12 @@
                         <h3>
                             <strong>
                                 두피 진단 결과, 당신의 두피 유형은 <br>
-                                <span style="color: #FF8000;">"{{predicted_label}}"</span>입니다
+                                <span style="color: #FF8000;" id="predicted-label" style="display: none;">
+                                    "{{predicted_label}}"
+                                </span>입니다
                             </strong>
                         </h3>
-                        <p id="resultText1">
+                        <p id="resultText1" style="display: none;">
                             {% if predicted_label == "경증 탈모" or predicted_label == "중등도 탈모" or predicted_label == "중증 탈모" %}
                                탈모는 정상적으로 모발이 존재해야 할 부위에 모발이 없거나 빈약한 상태를 말하며, 일반적으로 두피의 성모(굵고 검은 머리털)가 빠지는 것을 의미합니다. 모발 생성에 필요한 영양공급과 신진대사가 원활하게 이루어 지지 않아 생기는 진행성 질환입니다. 흔히 하루 약 50-70개 정도의 머리카락이 빠지고 새로 자라나는과정은 극히 정상적입니다. 그러나 하루 100개 넘는 머리카락이 빠지면 탈모를 의심할 수 있습니다.
                             {% elif predicted_label == "경증 비듬" or predicted_label == "중등도 비듬" or predicted_label == "중증 비듬" %}
@@ -90,7 +92,7 @@
 
                 <!-- 이미지 부분 복구 -->
                 <div class="col-lg-5 d-flex align-items-stretch order-1 order-lg-2">
-                    <img src="{{ img_src }}" alt="두피 이미지" class="scalp-image" onload="document.getElementById('loading').style.display='none'; document.querySelector('.why-us').style.display='block';" />
+                    <img src="{{ img_src }}" alt="두피 이미지" class="scalp-image" onload="document.getElementById('loading').style.display='none'; document.querySelector('.why-us').style.display='block'; document.getElementById('predicted-label').style.display='inline'; document.getElementById('resultText1').style.display='block';" />
                 </div>
             </div>
         </div>
