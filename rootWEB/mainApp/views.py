@@ -128,18 +128,11 @@ def upload(request):
     img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
 
     # 모델 폴더 찾기 (STATICFILES_DIRS 사용)
-    model_dir = None
-    for static_dir in settings.STATICFILES_DIRS:
-        potential_model_dir = os.path.join(static_dir, 'hair_predict_model2')
-        print("Checking directory:", potential_model_dir)
-        if os.path.exists(potential_model_dir):
-            model_dir = potential_model_dir
-            break
-
-    # 모델 폴더가 없을 때 예외 처리
-    if not model_dir:
-        raise FileNotFoundError(f"모델 폴더를 찾을 수 없습니다. 확인된 경로: {settings.STATICFILES_DIRS}")
-
+    model_dir = os.path.abspath("mainApp/static/hair_predict_model2")
+    print("MODEL_DIR >>>>", model_dir)
+    # 모델 폴더가 실제로 존재하는지 확인
+    if not os.path.exists(model_dir):
+        raise FileNotFoundError(f"모델 폴더를 찾을 수 없습니다: {model_dir}")
     print("MODEL_DIR >>>>", model_dir)
     pre_train_model = tf.keras.models.load_model(model_dir)
 
