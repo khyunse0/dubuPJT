@@ -18,6 +18,98 @@
         </div>
     </div>
 
+    <div class="container">
+    <h5>두피 사진을 업로드해주세요</h5>
+    <form method="post" class="post-form my-3" enctype="multipart/form-data" action = '../upload/'>
+        {% csrf_token %}
+    	<div>
+            <label for="imgfile">이미지 : </label>
+            <input type="file" class="form-control" name="image" id="imgfile"><br>
+        </div>
+        <div class="d-grid gap-2">
+          <input type="submit" id="loadingBtn" class="btn btn-lg btn-primary" value="진단 시작하기">
+        </div>
+    </form>
+
+    <div id="loading" style="margin-left: 0px; display: none;">
+        <img src="https://www.railtrip.co.kr/image/loading2.gif">
+        <p>loading..</p>
+    </div>
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us section-bg" style="display: none;">
+        <div class="container-fluid" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1">
+                    <div class="content">
+                        <h3>
+                            <strong>
+                                두피 진단 결과, 당신의 두피 유형은 <br>
+                                <span style="color: #FF8000;">"{{predicted_label}}"</span>입니다
+                            </strong>
+                        </h3>
+                        <p id="resultText1">
+                            {% if predicted_label == "경증 탈모" or predicted_label == "중등도 탈모" or predicted_label == "중증 탈모" %}
+                               탈모는 정상적으로 모발이 존재해야 할 부위에 모발이 없거나 빈약한 상태를 말하며, 일반적으로 두피의 성모(굵고 검은 머리털)가 빠지는 것을 의미합니다.
+                            {% elif predicted_label == "경증 비듬" or predicted_label == "중등도 비듬" or predicted_label == "중증 비듬" %}
+                               비듬이 생기는 원인은 여러 가지입니다. 두피 피지선의 과다 분비, 호르몬의 불균형, 두피 세포의 과다 증식 등이 있습니다.
+                            {% else %}
+                               두피 상태가 양호합니다.
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 이미지 부분 수정 -->
+                <div class="col-lg-5 d-flex align-items-stretch order-1 order-lg-2">
+                    <img src="{{ img_src }}" alt="두피 이미지" class="scalp-image" onload="document.getElementById('loading').style.display='none'; document.querySelector('.why-us').style.display='block';" />
+                </div>
+            </div>
+        </div>
+    </section><!-- End Why Us Section -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="scripts.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  {% include 'footer.html' %}
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두피 타입 진단하기</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Page content-->
+    <br><br><br><br><br><br><br><br>
+    <div class="container">
+        <div class="text-center mt-5">
+            <h1>두피 타입 진단하기</h1>
+            <p class="lead">당신의 두피 유형은 무엇입니까?</p>
+        </div>
+    </div>
+
 
 
     <div class="container">
@@ -138,3 +230,4 @@
   {% include 'footer.html' %}
   </body>
 </html>
+ -->
