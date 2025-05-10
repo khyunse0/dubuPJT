@@ -133,7 +133,7 @@ def upload(request):
     # 모델 폴더가 실제로 존재하는지 확인
     if not os.path.exists(model_dir):
         raise FileNotFoundError(f"모델 폴더를 찾을 수 없습니다: {model_dir}")
-    print("MODEL_DIR >>>>", model_dir)
+
     pre_train_model = tf.keras.models.load_model(model_dir)
 
     # 예측
@@ -143,12 +143,18 @@ def upload(request):
     predicted_label = labels[np.argmax(guess)]
     links_label = links[np.argmax(guess)]
     
+    # 이미지 Base64 인코딩
+    buffered = BytesIO()
+    img_file.save(buffered, format="JPEG")
+    img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
+    img_src = f"data:image/jpeg;base64,{img_base64}"
+
     return render(request, 'mainpage/scalp_result.html', {
         'predicted_label': predicted_label,
         'fileName': file.name,
-        'links_label': links_label
+        'links_label': links_label,
+        'img_src': img_src
     })
-
 def shampooButton(request):
     return render(request, 'mainpage/loss.html')
 
