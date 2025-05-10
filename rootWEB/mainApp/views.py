@@ -133,8 +133,8 @@ def upload(request):
     # print('debug >>>> filename ', fileName)
 
     # 모델 로드
-    # STATICFILES_DIRS에서 모델 폴더 찾기
-    for static_dir in settings.STATICFILES_DIRS:
+    # STATIC_URL에서 모델 폴더 찾기
+    for static_dir in settings.STATIC_URL:
         model_dir = os.path.join(static_dir, 'hair_predict_model2')
         if os.path.exists(model_dir):
             print("MODEL_DIR >>>>", model_dir)
