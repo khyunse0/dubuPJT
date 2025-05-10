@@ -37,7 +37,7 @@ import requests
 import uuid
 from django.conf import settings
 from io import BytesIO
-
+import base64
 
 load_dotenv()
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
