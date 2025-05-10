@@ -30,6 +30,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+#CSRF Error change to trust
+CSRF_TRUSTED_ORIGINS = [
+    'https://port-0-dubu-mag2lwjy68d1db23.sel4.cloudtype.app',
+    'https://<YOUR-CUSTOM-DOMAIN>'
+]
+
 
 # Application definition
 
