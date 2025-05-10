@@ -120,29 +120,28 @@ def upload(request):
     file = request.FILES.get('image')
     if not file:
         return render(request, 'mainpage/scalp_result.html', {'error': '이미지를 업로드해주세요.'})
-    print('debug >>>> img ', file, file.name)
-    # 파일을 메모리에서 열기
+
+    # 이미지 전처리
     img_file = Image.open(file)
     img_file = img_file.resize((60, 80))
     img = image.img_to_array(img_file)
     img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
 
-    # 파일 저장
-    # fs = FileSystemStorage()
-    # fileName = fs.save(file.name, file)
-    # print('debug >>>> filename ', fileName)
-
-    # 모델 로드
     # 모델 폴더 찾기 (STATICFILES_DIRS 사용)
+    model_dir = None
     for static_dir in settings.STATICFILES_DIRS:
-        model_dir = os.path.join(static_dir, 'hair_predict_model2')
-        if os.path.exists(model_dir):
-            print("MODEL_DIR >>>>", model_dir)
-            pre_train_model = tf.keras.models.load_model(model_dir)
+        potential_model_dir = os.path.join(static_dir, 'hair_predict_model2')
+        print("Checking directory:", potential_model_dir)
+        if os.path.exists(potential_model_dir):
+            model_dir = potential_model_dir
             break
-    else:
-        raise FileNotFoundError("모델 폴더를 찾을 수 없습니다.")
 
+    # 모델 폴더가 없을 때 예외 처리
+    if not model_dir:
+        raise FileNotFoundError(f"모델 폴더를 찾을 수 없습니다. 확인된 경로: {settings.STATICFILES_DIRS}")
+
+    print("MODEL_DIR >>>>", model_dir)
+    pre_train_model = tf.keras.models.load_model(model_dir)
 
     # 예측
     guess = pre_train_model.predict(img)
@@ -153,7 +152,7 @@ def upload(request):
     
     return render(request, 'mainpage/scalp_result.html', {
         'predicted_label': predicted_label,
-        'fileName': fileName,
+        'fileName': file.name,
         'links_label': links_label
     })
 
