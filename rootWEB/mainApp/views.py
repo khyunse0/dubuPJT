@@ -36,6 +36,8 @@ from .utils import get_tokens_for_user
 import requests
 import uuid
 from django.conf import settings
+from io import BytesIO
+
 
 load_dotenv()
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
