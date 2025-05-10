@@ -35,7 +35,7 @@ from django.utils import timezone
 from .utils import get_tokens_for_user
 import requests
 import uuid
-
+from django.conf import settings
 
 load_dotenv()
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
@@ -115,28 +115,39 @@ def join(request) :
 
 
 # media 폴더에 사진 업로드
-def upload(request) :
+def upload(request):
     print('debug >>>> upload ')
     file = request.FILES['image']
-    print('debug >>>> img ' , file , file.name)
+    print('debug >>>> img ', file, file.name)
+
+    # 파일 저장
     fs = FileSystemStorage()
-    fileName = fs.save(file ,file)
+    fileName = fs.save(file.name, file)
     print('debug >>>> filename ', fileName)
-    img_file = Image.open(file)
-    img_file = img_file.resize((60, 80))
-    img = image.img_to_array(img_file)
-    img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
-    #모델 로드
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    MODEL_DIR = os.path.join(BASE_DIR, 'rootWEB', 'mainApp', 'static', 'hair_predict_model2')
-    pre_train_model = tf.keras.models.load_model(MODEL_DIR)
+
+    # 모델 로드
+    # STATICFILES_DIRS에서 모델 폴더 찾기
+    for static_dir in settings.STATICFILES_DIRS:
+        model_dir = os.path.join(static_dir, 'hair_predict_model2')
+        if os.path.exists(model_dir):
+            print("MODEL_DIR >>>>", model_dir)
+            pre_train_model = tf.keras.models.load_model(model_dir)
+            break
+    else:
+        raise FileNotFoundError("모델 폴더를 찾을 수 없습니다.")
+
+    # 예측
     guess = pre_train_model.predict(img)
     labels = ['양호', '경증 비듬', '중등도 비듬', '중증 비듬', '경증 탈모', '중등도 탈모', '중증 탈모']
     links  = ['/shampoo', '/dandruff', '/dandruff', '/dandruff', '/loss', '/loss', '/loss']
     predicted_label = labels[np.argmax(guess)]
-    links_label     = links[np.argmax(guess)]
-    return render(request, 'mainpage/scalp_result.html', {'predicted_label': predicted_label, 'fileName' : fileName, 'links_label' : links_label})
-
+    links_label = links[np.argmax(guess)]
+    
+    return render(request, 'mainpage/scalp_result.html', {
+        'predicted_label': predicted_label,
+        'fileName': fileName,
+        'links_label': links_label
+    })
 
 def shampooButton(request):
     return render(request, 'mainpage/loss.html')
