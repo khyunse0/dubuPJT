@@ -117,13 +117,20 @@ def join(request) :
 # media 폴더에 사진 업로드
 def upload(request):
     print('debug >>>> upload ')
-    file = request.FILES['image']
+    file = request.FILES.get('image')
+    if not file:
+        return render(request, 'mainpage/scalp_result.html', {'error': '이미지를 업로드해주세요.'})
     print('debug >>>> img ', file, file.name)
+    # 파일을 메모리에서 열기
+    img_file = Image.open(file)
+    img_file = img_file.resize((60, 80))
+    img = image.img_to_array(img_file)
+    img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
 
     # 파일 저장
-    fs = FileSystemStorage()
-    fileName = fs.save(file.name, file)
-    print('debug >>>> filename ', fileName)
+    # fs = FileSystemStorage()
+    # fileName = fs.save(file.name, file)
+    # print('debug >>>> filename ', fileName)
 
     # 모델 로드
     # STATICFILES_DIRS에서 모델 폴더 찾기
