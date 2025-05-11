@@ -250,7 +250,7 @@ def alo_pred(request) :
     return render(request, 'mainpage/alo_pred.html')
 
 
-def predict_alopecia(request) :
+def predict_alopecia(request):
     print('debug >>>> upload ')
     file = request.FILES.get('image')
     if not file:
@@ -273,9 +273,9 @@ def predict_alopecia(request) :
     # 라벨과 링크 매핑
     labels = ['양호', '경증', '중등도', '중증']
     predicted_label = labels[predicted_idx]
-    if predicted_idx == 0 :
+    if predicted_idx == 0:
         links_label = '/shampoo'
-    else :
+    else:
         links_label = '/loss'
 
     # 이미지 Base64 인코딩
@@ -288,7 +288,8 @@ def predict_alopecia(request) :
     return render(request, 'mainpage/alo_result.html', {
         'predicted_label': predicted_label,
         'links_label': links_label,
-        'img_src': img_src
+        'img_src': img_src,  # 추가
+        'fileName': file.name  # 추가
     })
 
 def preprocess_image(img_file, img_size=(380, 380)):
