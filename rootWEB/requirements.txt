@@ -46,5 +46,5 @@ scikit-learn==1.2.2          # Python 3.9 호환
 setuptools>=25.1.1
 
 # 머신러닝 / 딥러닝
-tensorflow==2.11.0           # Python 3.9 호환 (CPU 버전)
+tensorflow-cpu==2.11.0           # Python 3.9 호환 (CPU 버전)
 keras==2.11.0                # Python 3.9 호환 (tensorflow와 호환)
