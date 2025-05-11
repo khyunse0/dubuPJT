@@ -32,6 +32,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'alo_pred' %}">Predict Alopecia</a></li>
                         <li class="nav-item"><a class="nav-link" href="./scalp">Scalp Check</a></li>
                         <li class="nav-item"><a class="nav-link" href="./shampoo">Product</a></li>
                         <li class="nav-item"><a class="nav-link" href="./my">Mypage</a></li>
@@ -54,7 +55,7 @@
             <div class="container" >
                 <div class="masthead-subheading" >두피를 부탁해</div>
                 <div class="masthead-heading" style="font-family:'가나초콜릿' ">Take care of <br>scalp</div>
-                <a class="btn btn-primary btn-xl text-uppercase " href="#">탈모 진단하러가기</a>
+                <a class="btn btn-primary btn-xl text-uppercase " href="{% url 'alo_pred' %}">탈모 진단하러가기</a>
                 <a class="btn btn-primary btn-xl text-uppercase " href="./check">두피 상태 진단하러가기</a>
             </div>
         </header>

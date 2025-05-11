@@ -240,3 +240,58 @@ def kakao_api(request):
         'KAKAO_JS_KEY': os.environ.get('KAKAO_JS_KEY')
     }
     return render(request, 'register.html', context)
+
+#################################추가 기능
+from django.apps import apps
+import torch
+from torchvision import transforms
+
+def alo_pred(request) :
+    print('debug >> mainApp/alo_predict')
+    return render(request, 'mainpage/alo_predict.html')
+
+def predict_alopecia(request) :
+    print('debug >>>> upload ')
+    file = request.FILES.get('image')
+    if not file:
+        return render(request, 'mainpage/alo_pred.html', {'error': '이미지를 업로드해주세요.'})
+
+    # 이미지 전처리
+    img_file = Image.open(file).convert("RGB")
+    original_img = img_file.copy()
+    transform = transforms.Compose([
+        transforms.Resize((380, 380)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    ])
+    img_tensor = transform(img_file).unsqueeze(0)  # (1, 3, 380, 380)
+
+    # 모델 가져오기 (앱에서 로드된 모델 사용)
+    model = apps.get_app_config('myapp').model
+    model.eval()
+
+    # 예측
+    with torch.no_grad():
+        output = model(img_tensor)
+        predicted_idx = output.argmax().item()
+
+    # 라벨과 링크 매핑
+    labels = ['양호', '경증', '중등도', '중증']
+    predicted_label = labels[predicted_idx]
+    if predicted_idx == 0 :
+        links_label = '/shampoo'
+    else :
+        links_label = '/loss'
+
+    # 이미지 Base64 인코딩
+    buffered = BytesIO()
+    original_img.save(buffered, format="JPEG")
+    img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
+    img_src = f"data:image/jpeg;base64,{img_base64}"
+
+    # 결과 페이지 렌더링
+    return render(request, 'mainpage/alo_result.html', {
+        'predicted_label': predicted_label,
+        'links_label': links_label,
+        'img_src': img_src
+    })
