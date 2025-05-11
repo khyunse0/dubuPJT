@@ -1,3 +1,8 @@
+--index-url https://download.pytorch.org/whl/cpu
+torch==1.13.1
+timm==0.9.2
+
+--extra-index-url https://pypi.org/simple
 # 핵심 프레임워크
 Django==4.2.2
 django-environ==0.11.2
@@ -37,9 +42,7 @@ requests==2.31.0
 numpy==1.24.3                # Python 3.9 호환
 pandas==1.5.3                # Python 3.9 호환
 scikit-learn==1.2.2          # Python 3.9 호환
---index-url https://download.pytorch.org/whl/cpu
-torch==1.13.1
-timm==0.9.2
+
 setuptools>=25.1.1
 
 # 머신러닝 / 딥러닝
