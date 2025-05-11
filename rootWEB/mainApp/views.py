@@ -244,11 +244,11 @@ def kakao_api(request):
 #################################추가 기능
 from django.apps import apps
 import torch
-from torchvision import transforms
 
 def alo_pred(request) :
     print('debug >> mainApp/alo_predict')
     return render(request, 'mainpage/alo_predict.html')
+
 
 def predict_alopecia(request) :
     print('debug >>>> upload ')
@@ -259,12 +259,7 @@ def predict_alopecia(request) :
     # 이미지 전처리
     img_file = Image.open(file).convert("RGB")
     original_img = img_file.copy()
-    transform = transforms.Compose([
-        transforms.Resize((380, 380)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-    ])
-    img_tensor = transform(img_file).unsqueeze(0)  # (1, 3, 380, 380)
+    img_tensor = preprocess_image(img_file)
 
     # 모델 가져오기 (앱에서 로드된 모델 사용)
     model = apps.get_app_config('myapp').model
@@ -295,3 +290,26 @@ def predict_alopecia(request) :
         'links_label': links_label,
         'img_src': img_src
     })
+
+def preprocess_image(img_file, img_size=(380, 380)):
+    # 1. 이미지 크기 조절
+    img_file = img_file.resize(img_size)
+
+    # 2. numpy 배열로 변환
+    img_array = np.array(img_file).astype(np.float32)
+
+    # 3. RGB 채널 순서 (H, W, C) → (C, H, W) 변경
+    img_array = img_array.transpose((2, 0, 1))
+
+    # 4. 정규화 (0-255 → 0-1)
+    img_array /= 255.0
+
+    # 5. ImageNet 평균 및 표준편차로 정규화
+    mean = np.array([0.485, 0.456, 0.406]).reshape(3, 1, 1)
+    std = np.array([0.229, 0.224, 0.225]).reshape(3, 1, 1)
+    img_array = (img_array - mean) / std
+
+    # 6. Tensor 변환
+    img_tensor = torch.tensor(img_array, dtype=torch.float32).unsqueeze(0)  # (1, 3, 380, 380)
+
+    return img_tensor
