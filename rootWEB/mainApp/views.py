@@ -258,7 +258,7 @@ def predict_alopecia(request):
 
     # 이미지 전처리
     img_file = Image.open(file).convert("RGB")
-    original_img = img_file.copy()
+    original_img = Image.open(file)
     img_tensor = preprocess_image(img_file)
 
     # 모델 가져오기 (앱에서 로드된 모델 사용)
