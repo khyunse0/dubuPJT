@@ -262,7 +262,7 @@ def predict_alopecia(request) :
     img_tensor = preprocess_image(img_file)
 
     # 모델 가져오기 (앱에서 로드된 모델 사용)
-    model = apps.get_app_config('myapp').model
+    model = apps.get_app_config('mainApp').model
     model.eval()
 
     # 예측
