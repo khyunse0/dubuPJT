@@ -253,12 +253,15 @@ def alo_pred(request) :
 def predict_alopecia(request):
     print('debug >>>> upload ')
     file = request.FILES.get('image')
+    print(f"FILE: {file}")  # 파일 로그 추가
+
     if not file:
+        print("No file uploaded")
         return render(request, 'mainpage/alo_pred.html', {'error': '이미지를 업로드해주세요.'})
 
     # 이미지 전처리
     img_file = Image.open(file).convert("RGB")
-    original_img = Image.open(file)
+    original_img = img_file.copy()
     img_tensor = preprocess_image(img_file)
 
     # 모델 가져오기 (앱에서 로드된 모델 사용)
@@ -273,10 +276,7 @@ def predict_alopecia(request):
     # 라벨과 링크 매핑
     labels = ['양호', '경증', '중등도', '중증']
     predicted_label = labels[predicted_idx]
-    if predicted_idx == 0:
-        links_label = '/shampoo'
-    else:
-        links_label = '/loss'
+    links_label = '/shampoo' if predicted_idx == 0 else '/loss'
 
     # 이미지 Base64 인코딩
     buffered = BytesIO()
@@ -284,11 +284,15 @@ def predict_alopecia(request):
     img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
     img_src = f"data:image/jpeg;base64,{img_base64}"
 
+    print(f"Predicted Label: {predicted_label}")
+    print(f"Links Label: {links_label}")
+    print(f"Image Source Length: {len(img_src)}")
+
     # 결과 페이지 렌더링
     return render(request, 'mainpage/alo_result.html', {
         'predicted_label': predicted_label,
         'links_label': links_label,
-        'img_src': img_src,  # 추가
+        'img_src': img_src,
         'fileName': file.name  # 추가
     })
 
