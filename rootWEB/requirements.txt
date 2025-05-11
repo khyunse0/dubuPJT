@@ -37,12 +37,11 @@ requests==2.31.0
 numpy==1.24.3                # Python 3.9 호환
 pandas==1.5.3                # Python 3.9 호환
 scikit-learn==1.2.2          # Python 3.9 호환
-torch==2.7.0+cpu
-torchvision==0.22.0+cpu
-torchaudio==2.7.0+cpu
+torch==2.7.0
+torchvision==0.22.0
+torchaudio==2.7.0
 timm==1.0.15
 setuptools>=25.1.1
-
 
 # 머신러닝 / 딥러닝
 tensorflow==2.11.0           # Python 3.9 호환 (CPU 버전)
