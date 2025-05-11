@@ -247,7 +247,7 @@ import torch
 
 def alo_pred(request) :
     print('debug >> mainApp/alo_predict')
-    return render(request, 'mainpage/alo_predict.html')
+    return render(request, 'mainpage/alo_pred.html')
 
 
 def predict_alopecia(request) :
